@@ -1,0 +1,143 @@
+\oddpagesection{INTRODUCTION}
+\label{sec:introduction}
+\glsresetall
+% Cyberspace
+With the accelerating expansion and development of the Internet and rapid increase of amounts of interconnected nodes, the cyberspace has become one of the most relevant domains not only for information exchange, integration and merger of systems, but also for malicious activities.
+% Cyber attacks and actors
+The increasing volume of revealed sophisticated and debilitating attacks against \gls{cii}, such as, Stuxnet \cite{Langner2013}, Duqu \cite{Symantec2011}, Night Dragon \cite{McAfee2011}, GhostNet \cite{Deiber2009}, Red October \cite{Great2013}, Shamoon \cite{Great2012}, EnergeticBear/Dragonfly \cite{USCERT2018}, BlackEnergy \cite{Great2016}, and NotPetya \cite{UK2018} represent the significance of the cyber domain. Sophisticated cyber attacks are constantly forcing changes in the core concepts of cyber security, such as, defensive measures, situational awareness, threat analysis, and response.
+Technological advancements in areas, such as, intrusion detection, artificial intelligence and big data analysis, have allowed the security community to reveal previously undetectable persistence of threat actors within the information systems. This is represented by the growing numbers of identified threat actors in cyberspace \cite{FireEyeAPT} \cite{MITRE-APT} and shows the interest in cyber domain both from state-affiliated and non-affiliated parties.
+
+% CII/ICS targeting 
+\gls{cii} components, such as, \gls{ics} and \gls{scada} networks are of an essential interest to the state-affiliated and non-affiliated actors, organized crime, terrorists, and malicious insiders, and are the prime targets for cyber warfare \cite{Nicholson2012}.
+These systems, primarily being designed for dependency and fail-safe, possess common vulnerabilities in data handling, security administration, architecture design, network implementation, and deployed platforms \cite{Sandia2003}.
+World energy council has acknowledged the significance of cyber security and recognized cyber attacks as a substantial threat to \gls{cii} and energy sector \cite{WEC2016}.
+However, the accepted response so far is generally limited to traditional information assurance principles, such as, system hardening and defence in-depth.
+
+% Cyber domain and CNO
+The acknowledgement of cyberspace as an operational domain by NATO \cite{CCDCOE2016} is the first step towards considering not only military implications, but also realizing that we are already in the age of full spectrum cyber operations and cyber warfare. Furthermore, establishment of NATO Cyberspace Operations Centre (CyOC)\footnote{NATO. Cyber Defence. \url{https://www.nato.int/cps/en/natohq/topics_78170.htm}. Accessed: 29/10/2018} \footnote{Breaking Defense. ``NATO To ‘Integrate’ Offensive Cyber By Members''. \url{https://breakingdefense.com/2018/11/nato-will-integrate-offensive-cyber-by-member-states/}. Accessed: 21/11/2018} directly points to the allied effort for having a stronger cyberspace presence and integration of such operations for allied system defence by year 2023.
+Robinson, Jones and Janicke \cite{Robinson2015} acknowledge the dual use of the cyber warfare and present the core principles, which include the lack of physical limitations, stealth, mutability, delivering kinetic effects, infrastructure control, attribution and deterrence challenges, and information as operational environment.
+Nicholson et.al. \cite{Nicholson2012} recognize, that cyber warfare can be used both for attacking and defending information systems in cyberspace, proposing penetration testing and war-gaming as one of the protection mechanisms.
+Cyberspace has already become the domain to be reckoned with, and now attracting an even more increased interest on exploring the nature and operational benefits of this domain.
+
+% Cyber weapon development
+The investment into the cyber weapon, related tool and technique development is increasing both from the nation state and private industry side.
+Major commercial initiatives, such as, Zerodium\footnote{Zerodium. \url{https://zerodium.com/}. Accessed: 28/09/2018}, FinFisher\footnote{FinFisher. \url{https://finfisher.com/FinFisher/index.html}. Accessed: 28/09/2018}, Hacking Team\footnote{Hacking Team. \url{http://www.hackingteam.it/}. Accessed: 28/09/2018}, Google Project Zero\footnote{Project Zero. \url{https://googleprojectzero.blogspot.com/}. Accessed: 28/09/2018} and Ozeda Group\footnote{Ozeda. \url{http://www.ozeda-group.com/}. Accessed: 28/09/2018} strive to develop and offer the exploit (e.g., zero-days) acquisition for governmental and intelligence agencies.
+This market saturation clearly represents the interest and demand for such solutions. It is very hard to assess and estimate to whom these exploits are being sold, who are already using them, and if their detection mechanisms are already developed by those who have purchased these cyber weapons.
+This indicates that whoever wants to compete in cyberspace should have the required capabilities to develop own techniques and tools, as well as ability to adjust the available ones according to the operational requirements and circumvent detection.
+Additionally, government sponsored cyber black-ops, such as, the leaked CIA and NSA cyber weapon tool-kit by the Shadow Brokers\footnote{Vault 7: CIA Hacking Tools Revealed. \url{https://wikileaks.org/ciav7p1/}. Accessed: 03/10/2018}, represents that nations possess such capabilities and are investing resources in cyber weapon development. This should not be surprising, since such capability establishment is in the interests of nations willing to maintain an advantage in the cyberspace and protect own assets.
+Cyber red team establishment, required tool-set development, and cyber operation execution is a capability typically under a very strict control and not being exposed by the nation states or sophisticated threat actors.
+Furthermore, the recent revelation\footnote{Press conference by NATO Secretary General Jens Stoltenberg following the meetings of NATO Defence Ministers. \url{https://www.nato.int/cps/en/natohq/opinions_158705.htm}. Accessed: 04/10/2018} on the identified Russian Federation's Main Intelligence Directorate (RF GRU Cyber Unit 26165) executed cyber attacks against international organizations. These attacks against institutions, such as, the Organization for the Prohibition of Chemical Weapons (OPCW) and Spiez Laboratory, have indicated the NATO member nations are practising responsive cyber defence. As well as, the United States of America countering the RF executed series of cyber attacks, dubbed as the ``Dragonfly'', against the US energy sector ICS/SCADA systems and its supply chain \cite{USCERT2018}.
+Moreover, European Central Bank has released the framework for threat intelligence-based ethical red teaming (TIBER-EU) \cite{ECB2018}, to test and improve the European financial institution resilience against sophisticated cyber attacks. This further recognizes the cyber red teaming, albeit from a defensive posture, as an applicable approach, which requires further research and development.
+
+
+\subsection{Problem Statement}
+\label{sec:problem}
+\glsresetall
+This thesis addresses the problems in the areas of response to the asymmetric threats, cyber red team capability development and computer network operation execution, and technical exercise development tailored to meet the requirements of an operational cyber red team.
+
+\textit{Responding to asymmetric threats.}
+Responding to the targeted sophisticated cyber attacks executed by a technologically advanced nation state, or threat actor, is becoming ever harder with traditional cyber defence approaches, placing defenders at a losing position when compared to such an adversary. Unconventional, hybrid and asymmetric threats in cyberspace demand an equally executed response. However, such asymmetric response to a stronger adversary needs to be understood better from various perspectives, for example, technical, operational, and legal.
+
+\textit{Cyber red team capabilities and operations.}
+Building the cyber red team capability is every nation's internal process, which is not publicly discussed and therefore not well understood when compared to building conventional armed forces and their general capabilities. Understanding such capabilities is especially important when considering offensive, responsive or active computer network operations. The myth of cyber red teaming being a nation's ``secret cyber capability'' has to be dispersed and such capability general requirements, applicability and operational conditions have to be researched openly. There is a lack of verified knowledge regarding cyber red team capability development, execution of various cyber operations, including computer network operations, design of such operations, execution, management and governance. Lewis \cite{Lewis2015} stipulates that few of the NATO member nations tend to be overly secretive regarding their offensive cyber capabilities, even once they have been leaked to the public, with an intention of increasing the likelihood of adversary performing incorrect judgement, when exploring the use of force against the NATO and its allies. This lack of public information and no accepted procedures or doctrines regarding offensive or responsive cyber defence operations can be reasoned from the perspective, that the cyber operations and cyberspace as a domain of operations have been only recently introduced, when compared to land, maritime and air warfare, and it is yet not entirely clear how such environments can be fully utilized, proper capabilities developed, and operations executed.
+
+\textit{Cyber red team readiness and technical exercises.}
+The various types of trainings (e.g., table-top exercise, decision-making training, and crisis management exercise) have been attempting to integrate cyber component, also specific cyber defence technical exercises are being created aimed at increasing awareness and defensive capacity. Such publicly discussed and advertised trainings and exercises are oriented mainly towards practising cyber defence, with the red team performing adversary simulation. Cyber red team oriented exercises either are not discussed due to its exaggerated political sensitivity, are limited to a very narrow participant group, or exercised within the nation itself being classified. Such lack of openly available information hinders the cyber red team capability evolution and along with it -- obscures the progress of defensive measures against a real adversary.
+
+The aim of the thesis is to define specialized cyber red teaming and develop novel \gls{tttp}, which are adapted to meet the requirements of the \gls{rcd} to deliver the desired unconventional thinking and asymmetric response through \gls{cno} against a persistent, well-motivated and advanced threat actors. Responsive cyber defence, defined in Definition 1 on page \pageref{def:rcd} and explained in more detail in chapter \ref{sec:rcd}, is any acceptable activity performed to ensure the protection of the defended systems in response to an incoming or imminent attack.
+\gls{crt} activity is a coordinated and timely reaction, either responsive or pre-emptive, to a threat in cyberspace to ensure defended information system resiliency, security and integrity.
+Responding to various and changing threats requires a prompt adaptation of novel \gls{tttp} by the cyber red team. This is even more important in the case when responders are in an unequal position, being outnumbered and sometimes with fewer resources available.
+A specialized \gls{crt} responsive operation is an operation which is characterized by at least the following factors: fast-paced, high stealth, small team with multiple specializations, remote attacks with no or very limited physical access to target, customized tool-set, specific \gls{tttp}, and engaged either for responsive or proactive defence operations. Definition 3 on page \pageref{def:crt} defines and further explains specialized \gls{crt}.
+To meet the demands of such operation execution, the red team needs to be selected, trained, and their skills need to be kept constantly up to date. Such goals can be met by integrating technical cyber exercises into the \gls{crt} development and maintenance life-cycle and by providing the training experience as close to the real operations as possible.
+
+
+\subsection{Research Questions}
+\label{sec:question}
+\glsresetall
+The following research questions address the cyber red teaming capability development and evolution, adversary detection and deception solution applicability to cyber red team activities, and training within technical cyber exercises to practice or prepare for real-life responsive computer network operations. To further clarify the research questions, they are split into sub-questions aiming at seeking more precise answers and addressing more particular nuances of the matter. The question is answered by providing the answers to its sub-question.
+The research question mapping to the particular publication and to the thesis chapter, where the question is explored and answered, is presented in table \ref{tab:mapping}.
+
+\begin{description}
+    \item [Q1.] \emph{What are the specialized cyber red team technical capabilities for responsive computer network operations?}
+    \item [Q1.1.] \emph{Which features the techniques, tools, tactics and procedures have to possess to be applicable to the specialized cyber red team responsive computer network operation requirements?}
+    \item [Q1.2.] \emph{How these proposed techniques, tools, tactics and procedures are suitable to counter the cyber attack kill-chain?}
+\end{description}
+For the cyber red team to be able to adjust to the operational requirements, such as, stealthy network access, setting up a covert command and control channel, and completing the objectives, proper techniques and tools need to be identified and developed. This question explores the features of the applicable techniques required to enable the cyber red team to build and expand the available arsenal, which is custom tailored to meet the requirements of every particular operational objective.
+Additionally, the operation execution by the red team to a certain extent would follow the cyber kill-chain \cite{LockheedMartin2015} phases for which the target network might have implemented relevant protection methods. It is important to assess how can the proposed techniques, tools and procedures be employed to counter the cyber attack kill-chain and what is their suitability for the computer network operation execution.
+Furthermore, such responsive cyber activities, besides technical considerations, retain legal concerns. The legal implications of such activities need to be introduced.
+Techniques and tools, explained in the listed research publications (\ref{pub:firstPub}, \ref{pub:secondPub}, \ref{pub:thirdPub}), focus on assessing their delivered effects and applicable usage procedures, thus granting the foundation for \gls{crt} novel technical capability development.
+Legal ramifications can be estimated, and guidance obtained from the published work (\ref{pub:eighthPub}).
+
+\begin{description}
+    \item [Q2.] \emph{How to establish the situational awareness for the cyber red team?}
+    \item [Q2.1.] \emph{How system log file analysis and cyber deception approaches are relevant to cyber red team work-flow when executing responsive cyber operations?}
+    \item [Q2.2.] \emph{In what ways such solutions are applicable to situational awareness, red team operational infrastructure protection, and attack technical attribution?}
+\end{description}
+Before commencing with any responsive actions within the cyberspace it is crucial to establish the situational awareness, understand if the systems are under attack, perform the initial technical attribution, and then execute the responsive operations to defend against the threat. For this to be possible, proper tools need to be integrated into the cyber red team's work-flow and environment, allowing high level of automation, easy and scalable deployment, and straightforward customization. To accomplish this, the delivered effects of the system log file-based anomaly and threat detection solutions, and cyber deception techniques need to be assessed for their applicability to complement the cyber red team's operational capabilities. As well as, how such approaches allow the protection of the red team's operational environment to present the defenders with an opportunity to gain advantage over the adversary.
+The applicable solutions are evaluated based upon listed research publications (\ref{pub:fourthPub}, \ref{pub:fifthPub}, \ref{pub:sixthPub}, \ref{pub:ninthPub}).
+
+\begin{description}
+    \item [Q3.] \emph{How to prepare and train the cyber red team for responsive computer network operation execution?}
+    \item [Q3.1.] \emph{What considerations are applicable for training cyber red team as close to the real-life conditions as possible in a technical cyber exercise?}
+    \item [Q3.2.] \emph{What means can be used to assess the cyber red team training objective achievement in near real-time?}
+\end{description}
+To prepare the cyber red team for the real responsive computer network operations, or to carry out the team selection and assessment, a proper training environment needs to be created. Technical exercises oriented at \gls{crt} should be considered delivering maximum possible realism, including fitting scenario, elaborate technical infrastructure, implemented challenges, chain of command, training objectives, evaluation of training goal achievement, and near real-time feedback provision to the training audience.
+This question explores the ways how such technical exercise can be designed, executing a full-spectrum cyber operation implementing all of the previously mentioned requirements for the \gls{crt} technical arsenal, \gls{tttp}, legal aspects, threat detection and deception mechanisms. The listed research papers (\ref{pub:thirdPub}, \ref{pub:seventhPub}) provide the required assessment on real-life attack implementation and near real-time feedback provisioning to the training audience.
+
+\begin{table}[!htb]
+    \centering
+    \begin{tabular}{| c | c | c |} \hline
+        \textbf{Research Question Number} & \textbf{Publication Number} & \textbf{Chapter Number} \\ \hline
+        \multirow{4} {*} {Q1.} & \ref{pub:firstPub} & \ref{sec:scrtop}, \ref{sec:ttps}, \ref{sec:killchain} \\
+         & \ref{pub:secondPub} & \ref{sec:scrtop}, \ref{sec:ttps}, \ref{sec:killchain}  \\
+         & \ref{pub:thirdPub} & \ref{sec:scrtop}, \ref{sec:ttps}, \ref{sec:killchain}  \\
+         & \ref{pub:eighthPub} & \ref{sec:scenario} \\ \hline
+        \multirow{4} {*} {Q2.} & \ref{pub:fourthPub} & \ref{sec:protection} \\
+         & \ref{pub:fifthPub} & \ref{sec:protection} \\
+         & \ref{pub:sixthPub} & \ref{sec:protection} \\
+         & \ref{pub:ninthPub} & \ref{sec:protection} \\ \hline
+        \multirow{3} {*} {Q3.} & \ref{pub:seventhPub} & \ref{sec:exercises} \\
+        & \ref{pub:thirdPub} & \ref{sec:exercises} \\
+        & \ref{pub:tenthPub} & \ref{sec:exercises} \\ \hline
+    \end{tabular}
+    \caption{Mapping of research questions and publications to the thesis chapters}
+    \label{tab:mapping}
+\end{table}
+
+
+\subsection{Contribution}
+\label{sec:contribution}
+\glsresetall
+This thesis is based on a collection of cited and published publications in international conferences and by publishing houses (IEEE, Springer, and Cambridge University Press).
+Thesis explores the principles and approaches for the \gls{crt} training and required \gls{tttp} development allowing to respond to an advanced adversary in an asymmetric manner. The \gls{cno} activities against the attacker are mounted within the responsive cyber defence paradigm, where the principle of a response to an ongoing or imminent threat is exercised. Computer network operations, defined in Definition 2 on page \pageref{def:cno} and explored in more detail in chapter \ref{sec:cno}, constitute any set of effect-oriented activities performed by the application of force in the cyberspace by the use of computer networks. In addition to technical aspects of such operations, a brief introduction to legal implications is presented, providing a broader view of the responsive actions executed by the cyber red team. It has to be noted, that rational response can be exercised once enough technical attribution data is gathered allowing identification of the attack, its source, or by profiling the attack patterns and adversary operational actions. The threat detection solutions are evaluated from the perspective of the effects delivered and their integration into the cyber red team work-flow to provide the required operational input and awareness. Furthermore, the principles on training, exercise design, preparing and assessing the red team are considered from the perspective of technical cyber exercises, where all aforementioned aspects are combined to provide the maximum training effect.
+
+The publications \ref{pub:firstPub}, \ref{pub:secondPub}, and \ref{pub:thirdPub} are linked together to cover the novel \gls{tttp} applicable to cyber red team activities. The publications \ref{pub:fourthPub}, \ref{pub:fifthPub}, \ref{pub:sixthPub}, and \ref{pub:ninthPub} provide the detection and cyber deception concepts suitable for \gls{crt} asset protection, adversary tracking, and technical attribution evidence gathering. Furthermore, publications \ref{pub:tenthPub}, \ref{pub:seventhPub}, \ref{pub:thirdPub}, and \ref{pub:eighthPub}, being supported by all listed publications, represent the cyber red team oriented technical exercise design, development, near real-time cyber red team feedback provision, execution aspects, and exercised activity legal considerations.
+
+The main contributions of this thesis are:
+\begin{enumerate}
+    \item A thorough review of operational requirements and proposal of new definitions for Responsive Cyber Defence, Computer Network Operations, and Cyber Red Teaming. This addresses the inconsistency in the various definitions for these concepts, attempts to crystallise the integral ideas, and propose a more thorough new definitions. Furthermore, minimal operational requirements and features for the \gls{rcd}, \gls{cno}, and \gls{crt} are assessed and presented;
+    \item Definition of a new concept for ``specialized cyber red team responsive computer network operations.'' This focuses on the operational requirements and novel ideas of such operations, with appropriate techniques, tools, tactics and procedures proposed for accomplishing them;
+    \item Principles and approaches for the development of novel techniques, tools, tactics and procedures to enhance specialized cyber red team responsive computer network operations. Aiming at novel conceptions allowing to develop new \gls{tttp} tailored for the \gls{crt} operational requirements. The proposed methods are assessed from their applicability and delivered effect perspective;
+    \item Review of accepted cyber kill-chain models and a proposal for a new comprehensive ``cyber attack kill-chain'' model with applicable techniques suggested for countering the kill-chain. Directed at assessing the strengths and drawbacks of the current accepted models and unifies them to provide a more thorough cyber attack kill-chain. Furthermore, the developed \gls{tttp} are assessed for applicability to bypass the proposed kill-chain at every stage;
+    \item Concepts for integration of detection and deception to aid the cyber red team operations, provide technical attribution, adversary tracking, threat assessment, and offer new considerations and means for cyber red team operational asset protection. The goal is directed towards integration of novel defensive techniques into cyber red team work-flow and operational infrastructure;
+    \item Creation of a new technical exercise oriented at cyber red team skill development in a close to real-life conditions. The focus is on defining the design requirements for cyber red team aimed at full-spectrum technical exercise creation, by integrating applicable \gls{tttp}, attack detection and cyber deception methods. The development and novel design principles of a cyber red team oriented technical exercise created by the author is presented. As well as, represents how every listed publication fits into the exercise development and execution; and
+    \item Cyber red team training objective assessment and near real-time feedback provision through the development of the novel automated cyber attack detection, analysis, and representation framework \textit{Frankenstack}. The aim is at delivering the novel monitoring and visualization solutions targeted at providing the best situational awareness picture possible to the exercise training audience to increase the training benefits and learning experience.
+\end{enumerate}
+
+
+\subsection{Thesis Structure}
+\label{sec:structure}
+\glsresetall
+This thesis is divided into six chapters. The introduction chapter provides a brief overview of the threat landscape and provides the reasoning for cyber red team applicability to conduct asymmetric responsive computer network operations, as well as, the research questions and contribution of the thesis.
+
+Chapter \ref{sec:background} gives an overview of related work and background in responsive cyber defence, computer network operations, cyber red teaming, and cyber red team oriented technical exercises;
+
+Chapter \ref{sec:crtopreq} defines the underlying concepts for specialized cyber red team responsive computer network operations and their requirements;
+
+Chapter \ref{sec:crtops} explores the relevant techniques and tool development approaches for the cyber red team responsive cyber defence operations, describes applicable tactics and procedures, and assesses such approach relevance to countering the cyber attack kill-chain.
+
+Chapter \ref{sec:protection} presents how anomaly detection and deception solutions are applicable to cyber red team activities and asset protection;
+
+Chapter \ref{sec:exercises} describes the use case of cyber red team oriented full-spectrum technical exercise design, operational requirements, and introduces the legal ramifications of responsive cyber operations;
+
+Chapter \ref{sec:end} concludes this thesis and presents ideas for future work.

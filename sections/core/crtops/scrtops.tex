@@ -1,0 +1,235 @@
+\subsection{Operational Requirements}
+\label{sec:scrtop}
+\glsresetall
+The requirements listed separately for \gls{rcd}, \gls{cno}, and \gls{crt} have to be combined to define the demands of the specialized cyber red team responsive computer network operations, as it consolidates all of the individual concepts. The techniques and tools, presented in the listed publications, are described and mapped against these criteria to identify how they can benefit, enhance and support the \gls{tttp} creation for specialized \gls{crt} responsive \gls{cno} fulfilment.
+
+% DEFINITION
+\begin{description}
+    \label{def:scrtop}
+    \item \textbf{Definition 4.} Specialized cyber red team responsive computer network operations are such computer network operations (1), which are executed by a specialized cyber red team (2) within the responsive cyber defence (3).
+
+    With the essential elements of the definition being:
+    \begin{enumerate}
+        \item computer network operations according to Definition 2 on page \pageref{def:cno};
+        \item specialized cyber red team according to Definition 3 on page \pageref{def:crt}; and
+        \item responsive cyber defence according to Definition 1 on page \pageref{def:rcd}.
+    \end{enumerate}
+\end{description}
+
+\begin{table}[!htb]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|p{1.5cm}|l|p{2cm}|c|c|c|}
+\hline
+\textbf{RCD} & \textbf{CNO}             & \textbf{CRT} & \textbf{Specialized CRT Responsive CNO}     & \textbf{Pub.I} & \textbf{Pub.II} & \textbf{Pub.III} \\ \hline
+Independent  &                          & Skilled      & \multirow{4}{2.2cm}{Stealthy and innovative}& \multirow{4}{*}{X}     & \multirow{4}{*}{X}      & \multirow{4}{*}{X}       \\ \cline{1-3}
+             &                          & Specialized  &                                             &                        &                         &                          \\ \cline{1-3}
+             & Dynamic                  & Adaptive     &                                             &                        &                         &                          \\ \cline{1-3}
+             & Stealthy                 & Innovative   &                                             &                        &                         &                          \\ \hline
+Available    & Agile                    & Small        & Agile and available                         & X                      & X                       &                          \\ \hline
+             & Focused                  & Focused      & Focus of force                              &                        & X                       & X                        \\ \hline
+Omnipresent  & Pervasive                & Targeted     & \multirow{2}{2.2cm}{Targeted and pervasive} & \multirow{2}{*}{X}     & \multirow{2}{*}{X}      & \multirow{2}{*}{X}       \\ \cline{1-3}
+             & Parallel and distributed &              &                                             &                        &                         &                          \\ \hline
+Automated    &                          &              & \multirow{2}{2.2cm}{Rapid and timely}       & \multirow{2}{*}{}      & \multirow{2}{*}{X}      & \multirow{2}{*}{}        \\ \cline{1-3}
+Synchronized & Rapid                    & Timely       &                                             &                        &                         &                          \\ \hline
+Integrated   &                          &              & \multirow{2}{2.2cm}{Integrated and coordinated} & \multirow{2}{*}{}  & \multirow{2}{*}{}       & \multirow{2}{*}{X}       \\ \cline{1-3}
+Coordinated  &                          & Supportive   &                                             &                        &                         &                          \\ \hline
+             & Hybrid                   &              & \multirow{2}{2.2cm}{Hybrid and effective}   & \multirow{2}{*}{}      & \multirow{2}{*}{X}      & \multirow{2}{*}{X}       \\ \cline{1-3}
+Effective    & Effective                &              &                                             &                        &                         &                          \\ \hline
+Asymmetric   & Asymmetric               & Asymmetric   & Asymmetric                                  &                        & X                       & X                        \\ \hline
+\end{tabular}%
+}
+\caption{Specialized CRT responsive CNO grouping and TTTP mapping to publications}
+\label{tab:scrt}
+\end{table}
+
+The table \ref{tab:scrt} represents the features of every individual \gls{rcd}, \gls{cno} and \gls{crt} concept grouped to form the specialized cyber red team responsive computer network operation requirements. These requirements are then mapped against the methods and approaches presented in the publications to introduce \gls{tttp} supporting this objective. In the table, the `X' denotes that a particular technique, presented in that publication, is applicable to the specialized cyber red team responsive operation specific technique, tool and procedure development. The listed techniques are not exhaustive and do not form a complete list, but represent the ones as introduced in the listed publications.
+At least the following characteristics are applicable to the proposed new concept:
+\begin{enumerate}
+    \item \textbf{Stealthy and innovative.} Grasps the core requirements for self-sustainability, evolution and adjustment to the changing environment, adaptation of adversarial \gls{tttp}, independence and innovative skills, to provide the maximum possible level of stealth and make attribution harder;
+    \item \textbf{Agile and available.} A prepared and on demand available, small team with high manoeuvrability;
+    \item \textbf{Focus of force.} Allows achieving rapid concentration of force focused on performing a specific operation against a single or a small set of targets in the cyberspace;
+    \item \textbf{Targeted and pervasive.} Is specifically crafted and designed to deliver the required single impact or a set of parallel activities remotely from any position in the cyberspace;
+    \item \textbf{Rapid and timely.} Enabling the fast and automated execution of synchronized activities in the designated time or against the adversary as the ongoing attack progresses;
+    \item \textbf{Integrated and coordinated.} Support to other responsive operations and activities in a coordinated manner based on initial threat assessment;
+    \item \textbf{Hybrid and effective.} Can be applicable both to defensive or offensive activities, delivering required impact against kinetic or cyber assets; and
+    \item \textbf{Asymmetric.} Has to provide maximum possible effect with minimum available resources against a stronger adversary.
+\end{enumerate}
+This is not an exhaustive list and it can be expanded or optimized with the characteristics, which could be applicable depending on specific operational goals, desired effects and available resources.
+
+
+\subsection{Techniques, Tools, Tactics and Procedures}
+\label{sec:ttps}
+The techniques and tools presented in listed publications are logically intertwined to provide the support for the cyber red team operation key stage execution. Those being -- gaining initial access (\ref{pub:secondPub}), establishing a command and control channel (\ref{pub:firstPub}), and delivering the impact (\ref{pub:thirdPub}). These critical stages are part of nearly any cyber operation (see table \ref{tab:achain} on page \pageref{tab:achain}), where the network perimeter needs to be breached to establish initial foothold (e.g., through cyber means or kinetic to cyber methods), a secure channel is required to provide path into the target system for lateral movement and asset location, and finally the designated impact delivery. Every computer network operation will have its own requirements and effects to be delivered to the adversary information systems. In some cases, to deliver the desired effect, the cyber components are just means of triggering it, such as, disabling the power to force the use of backup generator, conduct a \gls{dos} to compel to switch to insecure communication lines, target the integrity of a military command and control system to degrade situational awareness and cause incorrect decision-making.
+The following sections, in a structured way, review the publications and present the fundamental techniques, prototyped tools, and procedures for technique and tool applicability to the specified cyber red team operation requirements (see table \ref{tab:scrt}).
+
+
+\subsubsection{Gaining Initial Access}
+\label{sec:access}
+\textbf{Techniques.}
+\ref{pub:secondPub} shows the novel and easy to use method for binary protocol bit-aware fuzzing and reverse-engineering \cite{Blumbergs2017}.
+The core concepts introduced by that work rely on creative way for atomic data manipulation exposing vulnerabilities and attack vectors.
+Assessed network protocol fuzzing frameworks are limited to fuzzing one byte as the smallest unit of data. Such limitation to one byte can be reasonable when assessing the protocols located at the upper layers of the OSI model, such as, FTP, HTTP, and DNS. However, this is a severely limiting factor restricting binary protocol analysis and fuzzing, where the data fields can be of a variable length and not always compatible with a length of one byte. For example, the IPv6 header Flow Label field is 20 bits long and cannot be byte-aligned to comply with the protocol specification. In essence, nearly any network communication protocol can be treated as ``binary protocol'' since they are composed of multiple variable length bit groups (i.e., bit-fields). The proposed solution accepts one bit as the smallest unit of data, thus allowing flexible fuzzing test-case creation. This permits practically any communication protocol analysis independent of its OSI layer, such as, performing Layer-2 Ethernet frame or Layer-3 IP packet fuzzing. The proposed technique is also applicable to other media, such as, serial line communications, as long as available hardware and software supports it. In the conducted experiments a proprietary serial line protocol ported to TCP/IP stack was successfully targeted.
+
+In general, fuzzing does not immediately guarantee to find exploitable vulnerabilities, since this depends on multiple factors, such as, targeted software development quality, complexity, used programming language, code coverage, test-case correctness, and time. The assessed popular fuzzing frameworks have a complex targeted protocol description and test-case creation process.
+\textit{Bbuzz} attempts to ease this process, speed-up the increased quality test-case creation, and minimize time investment for attack set-up through systematic and easy to use approach.
+
+\textbf{Tools.}
+Based on these principles, the \textit{Bbuzz} framework for systematic binary protocol fuzzing and reverse-engineering is prototyped, described and applied in practice by the author to confirm its applicability and value for cyber red team operations.
+This framework allows an automated test-case generation by analysing the available sample traffic and applying methods, such as, bit-group pattern matching, mutable and immutable field identification, and entropy measurements. Such approach, in case of available traffic capture, allows a rapid initial test-case generation and start of the fuzzing process. For effective test-case generation the framework uses various field mutation approaches and produces n-fold Cartesian product of all available payload field mutation sets. This ensures that all possible payload combinations from individual field mutation sets are generated to grant the most complete set of test-cases.
+
+The table \ref{tab:fuzz} briefly summarizes the findings from \ref{pub:secondPub} to compare the commonly used fuzzing frameworks and tools against the developed \textit{Bbuzz} framework (tools are listed in \textbf{bold} in the table). The comparison criteria is based on the following requirements (listed in \textit{italics} in the table): open-source and available on demand to the \gls{crt} depending on the operational requirements; reasonably maintained by the developers to ensure it being up to date as much as possible; is designed or can be applied to support also network protocol fuzzing; can fuzz the protocol starting from OSI Layer-2; the fuzzing test-cases support variable length bit-fields, which can be fuzzed bit-wise with one bit being the smallest fuzzing test-case; can be used to perform network traffic sample analysis to identify features, such as, pattern mining, immutable and mutable bit-field identification, and field Shannon entropy calculations; based on the traffic analysis can automatically create the initial test case; and can monitor the target system under test as much as it is possible depending on the use case. In the table, the field marked with \textit{'Yes'} denotes, that this feature is supported, and \textit{'No'} presents the lack of support for the respective framework. Target monitoring for \textit{Taof} has been labelled as \textit{'Partial'} since the tool expects a reply from the target system and if it is not received, then an exception is assumed. Multiple features for the \textit{Afl} have been marked as \textit{'Partial'} since it is a file format based fuzzer, but can be used to generate test cases from a sample network packet, which have to be wrapped by other means to be sent over the network to the destination. \textit{Bbuzz} is aimed at remote system testing over network and supports ICMP echo messages and port probing to detect a possible exception condition, therefore it has been labelled as \textit{'Partial'}. From the presented results it can be observed, that the \textit{Bbuzz} tool can deliver more flexibility and functional diversity for the \gls{crt} when compared to other common fuzzing frameworks.
+
+\begin{table}[!htb]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
+\hline
+                                                                           & \textbf{Spike} & \textbf{Sulley} & \textbf{Boofuzz} & \textbf{Peach CE} & \textbf{Taof} & \textbf{Zzuf} & \textbf{Afl} & \textbf{Bbuzz} \\ \hline
+\textit{Open-source}                                                       & Yes            & Yes             & Yes              & Yes               & Yes           & Yes           & Yes          & Yes            \\ \hline
+\textit{Maintained}                                                        & No             & No              & Yes              & Yes               & No            & Yes           & Yes          & Yes            \\ \hline
+\textit{Network-based}                                                     & Yes            & Yes             & Yes              & Yes               & Yes           & Yes           & No           & Yes            \\ \hline
+\textit{Layer-2}                                                           & No             & No              & No               & No                & No            & No            & Partial      & Yes            \\ \hline
+\textit{Bit-wise}                                                          & No             & No              & No               & No                & No            & No            & Partial      & Yes            \\ \hline
+\textit{\begin{tabular}[c]{@{}l@{}}Traffic sample\\ analysis\end{tabular}} & No             & No              & No               & No                & No            & No            & Partial      & Yes            \\ \hline
+\textit{\begin{tabular}[c]{@{}l@{}}Automatic\\ test-cases\end{tabular}}    & No             & No              & No               & No                & No            & No            & Partial      & Yes            \\ \hline
+\textit{\begin{tabular}[c]{@{}l@{}}Target\\ Monitoring\end{tabular}}       & No             & Yes             & Yes              & Yes               & Partial       & No            & No           & Partial        \\ \hline
+\end{tabular}%
+}
+\caption{Common fuzzing framework comparison to \textit{Bbuzz}}
+\label{tab:fuzz}
+\end{table}
+
+As a use case, \textit{Bbuzz} was applied to quickly reverse-engineer key features of the NATO proprietary Link-1 binary protocol, which is used for real-time air picture representation at the military operations centres and air traffic control stations. The protocol property reverse-engineering, such as, flight number, coordinates, altitude, bearing, velocity, and \gls{iff} code, allowed the injection of fake aeroplane tracks via the computer network. This attack vector was used to degrade the situational awareness and decision-making process of a NATO operation, performed within the NATO response force readiness exercise STEADFAST COBALT 2017\footnote{SHAPE. ``Exercise Steadfast Cobalt set to get underway in Lithuania.'' \url{https://shape.nato.int/news-archive/2017/exercise-steadfast-cobalt-set-to-get-underway-in-lithuania}. Accessed 23/09/2018}.
+The \textit{Bbuzz}\footnote{Bbuzz. \url{https://github.com/lockout/Bbuzz}. Accessed: 01/10/2018} framework, written in Python 3, has been released publicly on GitHub under the MIT license and is freely available to everyone for usage and further customization.
+
+Additionally, the published work had the following impact on the international security community:
+Link-1 attacks were implemented in the game network of the NATO CCD CoE executed \gls{cdx} ``Locked Shields 2017'' and successfully executed by the \gls{crt} against defending \textit{Blue Team} systems;
+enhanced discussions at NATO Communications and Information Agency (NCIA) on accelerating the Link-1 protocol revision and its long-term deprecation plans;
+as well as further applicability for \gls{ics}/\gls{scada} protocol reverse-engineering and attacks \cite{Blumbergs2018};
+and generating malicious traffic for testing the unsupervised framework for detecting anomalous Syslog messages \cite{Vaarandi2018}.
+
+\textbf{Tactics and procedures.}
+It has to be noted, that vulnerability identification and exploit development can be a lengthy and tedious task, however, the cyber red team tool-set, such as, \textit{Bbuzz}, provides the necessary means to ease, automate and deliver results faster. Though the approach not being stealthy in its nature, it gives the innovative way on finding targeted vulnerabilities in the adversary's information systems and developing custom exploits, which will raise the level of stealth and increase operational success.
+For this to be possible either an initial intelligence information is required or the reconnaissance needs to be performed. Intelligence information provided either by the intelligence service or collected by the red team through open source intelligence (OSINT) will give a starting position on understanding if such technique and tools are applicable to achieving this goal. If the operational and time constraints allow and this is deemed as a valid option to be pursued, then further data might be required. Additional information, depending on the target exposure could be collected via the means of active (e.g., network port scans, banner grabbing) or passive (e.g., using online solutions such as \textit{Shodan}, or any other applicable OSINT technique) reconnaissance. The gathered information would allow the cyber red team to attempt to replicate the target system in a controlled and closed testing environment.
+Targeting software and communication protocols via methods, such as, fuzzing, can be applicable throughout the cyber red team attack life-cycle to find vulnerabilities or ways on how to otherwise abuse the target under test.
+
+From the perspective of custom exploit development for the initial adversary network targeting to gain the foothold, this can be seen as one of the valid options for stealthy network entry. Especially favoured in case when traditional entry methods, such as, \textit{spear-phishing} campaign or known exploit execution might be not desired as they could raise attention and trigger alerts. As well as, in cases when the external network services have limited attack surface and only few options to attempt remote attacks are viable.
+To attempt such an attack, the initial information is preferred well in advance due to time requirements for reference system creation, vulnerability identification, and exploit verification. However, fuzz-testing can be integrated in any phase of activity to explore alternative ways while pursuing ready-available attacks paths, since it is always available and relatively easy and fast to be set-up.
+
+Such focus of force on one or small set of targets for finding vulnerabilities has its risks and benefits. Investing resources in finding a targeted vulnerability in a small set of services, instead of attempting on finding attack vectors in every exposed asset, has to be well assessed from the perspective of sensibility of attack, likelihood of possible flaws and expertise required to transform them into functioning exploit. However, in a successful case such attack vector can be a significant asset when executing computer network operations or assisting other related activities. Not only support to achieving the initial foothold can be obtained but depending on the possible and desirable effects also other direct or indirect impact can be inflicted on both the cyber and kinetic components. Not always the targeted element of the system is the intended target, but it can serve as an indirect mean to accomplish the desired effect, such as, obscuring adversary's situational awareness. 
+Taking into consideration all the aforementioned limitations and advantages, the successfully identified custom vulnerability will grant a small cyber red team a higher success of operation execution.
+
+The presented and verified concepts and approaches contribute to the following operational requirement development:
+stealthy and innovative,
+agile and available,
+focus of force,
+targeted and pervasive,
+rapid and timely,
+effective, and
+asymmetric.
+
+
+\subsubsection{Establishing Command and Control Channel}
+\label{sec:cnc}
+\textbf{Techniques.}
+\ref{pub:firstPub} presents the novel and simple ways for covert channel creation based on IPv6 transition technologies \cite{Blumbergs2016}.
+The fundamental approaches are based on innovative and creative use of existing technology present in current computer networks.
+The covert channel creation approach relies on IPv6 transition mechanisms, such as, dual-stack, encapsulation and tunnelling. These technologies exist in vast majority of current computer networks and are supported by nearly all network communication devices and operating systems. Based on this, it is possible, for example, to create an egress covert channel from the dual stack network, where network engineers have implemented IPv4 addressing scheme, but are not controlling the IPv6, either because not being aware of it or not having a full understanding on how to properly implement, control and secure it. One method uses the IPv4 as a transport layer to establish an IPv6 connectivity by the means, such as, \textit{6in4} encapsulation or \gls{gre} tunnelling. Additionally, for a dual-stack network, it is possible to establish multiple simultaneous IPv4 and IPv6 connections to various destination IP addresses and exfiltrate data over those. As verified in the experiment, the \gls{nids} would not be able to establish the context, correlate the packets and perform analysis which are split and sent over IPv4 and IPv6 in a randomly selected order. This happens because two different IP stacks are used for packet delivery and tested \gls{nids} solutions do not treat such split packets as belonging to the same network data stream. This was identified as a fundamental flaw in the \gls{nids} implementations requiring their redesign and detection algorithm remodelling.
+
+\textbf{Tools.}
+Based on these principles, two tools -- \textit{tun64} and \textit{nc64}, are prototyped, described and thoroughly tested by the author and a team of anomaly and intrusion detection experts. Tests are performed against a set of commercial and open-source solutions, such as, \textit{Snort}, \textit{Suricata}, \textit{Bro}, and \textit{Moloch}. The commercial tools are not mentioned explicitly due to discretion and vendors not agreeing to allow their names to be announced, however, among those are the market leaders for \gls{ids}, \gls{nids} and \gls{dlp} products. Prototyped attack tools are tested alongside with other common covert channel creation techniques, such as, HTTP, DNS, ICMP, SSH and \textit{netcat} based tunnels, running on applicable and various common TCP and UDP ports. In a conducted experiment, the proposed approaches are verified to be capable of successfully bypassing the \gls{nids} detection and allowing covert channel establishment to be used for various purposes, such as, \gls{cnc} channel establishment and data exfiltration. Furthermore, the \textit{nc64} tool has been successfully implemented into the cyber red team tool-set for data exfiltration and attack execution against the defending blue teams within the largest international live-fire technical cyber defence exercise ``Locked Shields''.
+Both prototyped tools\footnote{tun64. \url{https://github.com/lockout/tun64}. Accessed: 01/10/2018} \footnote{nc64. \url{https://github.com/lockout/nc64}. Accessed: 01/10/2018}, written in Python, are publicly released on GitHub under the MIT license and available to be used by everyone.
+
+The table \ref{tab:tun} represents a shortened and condensed version of findings from \ref{pub:firstPub} related to developed tool \textit{nc64} and \textit{tun64} comparison to other commonly used protocol tunnelling method (represented in \textit{italics} in the table) detection by popular open-source monitoring, \gls{nids}, and \gls{dpi} solutions (represented in \textbf{bold} in the table). The chosen monitoring tools are \textit{Snort} \gls{nids} with Source Fire (SF) and Emerging Threats (ET) signatures, Suricata \gls{nids}, \textit{Bro} and \textit{Moloch} \gls{dpi} solutions. The tested popular commercial \gls{nids} and \gls{dpi} solutions are not listed or mentioned due to signed non-disclosure agreements, however, the prototyped approaches were able to circumvent the detection with high success ratio.
+The listed tool configuration notation follows the following convention \textit{tool\_name-transport\_protocol-port-IPversion(s)}, for example, the \textit{nc64} tool running over TCP to a destination port 80 using IPv6 and IPv4 interchangeably would be written as \textit{nc64-t-80-6/4}.
+The test outcomes are labelled as follows: a positive match (denoted by letter Y in the table) clearly identified a malicious activity and triggered alerts, partial or abnormal footprint (denoted by letter P) raised the alert but did not provide appropriate information, potential visible match (denoted by letter V) requires human analyst or sophisticated anomaly detection for a positive match verification, and the worst case (denoted by letter N) does not generate any visible alerts or logs. From the presented results it can be seen, that the \textit{nc64} tool is successful on evading the implemented automated threat detection solutions and has a higher evasion success rate than other protocol tunnelling methods, as well as, it has not been fingerprinted in comparison to the well-known \textit{netcat} tool.
+
+\begin{table}[!tb]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline
+                            & \textbf{Snort SF} & \textbf{Snort ET} & \textbf{Suricata} & \textbf{Bro} & \textbf{Moloch} \\ \hline
+\textit{http-t-80-4}        & N                 & N                 & V                 & V            & V               \\ \hline
+\textit{iodine-u-53-4}      & N                 & N                 & Y                 & P            & V               \\ \hline
+\textit{ptunnel-icmp}       & N                 & Y                 & N                 & V            & V               \\ \hline
+\textit{netcat-t-80-6}      & N                 & N                 & N                 & V            & N               \\ \hline
+\textit{ssh-t-80-6}         & N                 & N                 & V                 & P            & N               \\ \hline
+\textit{tun64-t-80-t6over4} & N                 & Y                 & Y                 & P            & N               \\ \hline
+\textit{nc64-t-80-6/4}      & N                 & N                 & N                 & P            & V               \\ \hline
+\textit{nc64-t-443-6}       & N                 & N                 & N                 & V            & N               \\ \hline
+\end{tabular}
+\caption{Common tunnelling method detection comparison to \textit{nc64} and \textit{tun64}}
+\label{tab:tun}
+\end{table}
+
+Furthermore, these techniques support target system remote access from nearly any location in the cyberspace. Major global initiatives executed by the global standardization and industry leaders, such as, ``World IPv6 Day'', are accelerating the introduction of IPv6 throughout the Internet with its backbone already being fully IPv6 but lagging at the network edges. To support the IPv6 connectivity for the IPv4 networks, the transition mechanisms are introduced and maintained until the Internet has fully migrated to IPv6. Widespread deployment and availability of IPv6 and required transition mechanisms make this attack approach, as implemented in the \textit{nc64} and \textit{tun64}, global and available throughout the cyberspace. Furthermore, it can be assumed, that IPv4 enabled networks with transition mechanisms enabled will remain for an undefined period of time.
+
+Additionally, the published work had the following impact on the international security community:
+EUROPOL European Cybercrime Centre (EC3) released a security warning on IPv6 vulnerabilities \cite{EC3-2017-7};
+Forum of Incident Response and Security Teams (FIRST) annual conference sparked discussions on IPv6 security\footnote{FIRST Conference 2018. F.Herberg, SWITCH. \url{https://www.first.org/resources/papers/conf2018/Herberg-Frank_FIRST_20180624.pdf}. Accessed: 23/09/2018};
+IETF discussions on protocol specification updates and transition mechanism deprecation (private e-mail exchange between the IETF representatives and the author);
+NIDS vendor system updates (private e-mail exchange between the vendor and the author);
+and multiple news articles\footnote{InfoSecurity. ``NATO CCDCoE: IPv6 Transition Opens Up Covert Info Exfiltration.'' \url{https://www.infosecurity-magazine.com/news/nato-ipv6-transition-opens-up/}. Accessed: 23/09/2018} \footnote{Slashdot. ``Tunnelled IPv6 Attacks Bypass Network Intrusion Detection Systems.'' \url{https://tech.slashdot.org/story/17/04/09/0452220/tunnelled-ipv6-attacks-bypass-network-intrusion-detection-systems}. Accessed: 23/09/2018}.
+
+\textbf{Tactics and procedures.}
+The implemented tools and approaches provide high level of flexibility and usage applicability since they are built on top of a network protocol stack supported by nearly all modern network devices and operating systems. Such capability yields to the cyber red team with extra level of stealth due to readily-available technology use in the modern computer networks. Both the \textit{tun64} and \textit{nc64} tools are applicable to achieving this goal, however, \textit{nc64} showing better results in circumventing network security solutions. Since the \textit{tun64} amd \textit{nc64} tools, alongside with the automated testing network creation scripts, have been publicly released, they are freely available for the cyber red team to be used for any tailored access operations.
+
+The main area of such technique applicability is for maintaining control over the compromised assets in the target network, either in the first stages of the attacks or when moving laterally in the network and searching for the intended target. Such created \gls{cnc} channels permit not only the control over the specific systems, but also any other data exchange, such as valuable data exfiltration. Furthermore, when engaging in lateral movement within the dual-stack network such approach can be used to maintain the desired level of stealth. This can be accomplished either by moving from one compromised host to another by the means of such techniques, or interconnecting internal network nodes to create a path which is harder to be traced back to its origin and initial entry point. When targeting multi-tiered networks such as \gls{ics}/\gls{scada}, consisting of various in-depth network segments, maintaining a stable \gls{cnc} channel is of a high priority to deliver the designated impact to the target systems.
+
+Detecting such implemented covert channel was identified to be extremely hard, even by a human analyst, since there were no known patterns or signatures to be matched against the large volume of data collected by the \gls{dpi}. The common \gls{cnc} channels would rely on using typical protocols such as DNS, HTTP, and within the MS Windows network -- SMB, to carry the data in the protocol payload fields. These approaches are well known to the analysts, even if the covert method is not known. If the IPv6 transition mechanism based covert channel is implemented properly, such as, network port aligned with its expected payload headers (e.g., HTTP headers over TCP/80), then the chances of remaining undetected are increasing. This consideration is applicable to any other technique used by cyber red team, for example, when targeting or impersonating a particular network service, the performed activities have to comply with at least the expected patterns of timing, network protocol, source and destination ports, and protocol payload main features.
+From the conducted experiments, it was identified, that the prototyped \textit{nc64} tool had the best detection evasion indicators when using the following ports -- UDP/22, TCP/443, UDP/443, and UDP/80.
+The presented and verified concepts and approaches contribute to the following operational requirement development: stealthy and innovative, agile and available, and targeted and pervasive. 
+
+
+\subsubsection{Delivering the Impact}
+\label{sec:impact}
+\textbf{Techniques.}
+\ref{pub:thirdPub} displays the novel and automated approaches for \gls{ics}/\gls{scada} protocol, system takeover and process control \cite{Blumbergs2018}.
+The basic ideas represented in this work are vulnerability location methods, verification and weaponization for critical impact infliction.
+Utilizing these approaches, the \gls{ics}/\gls{scada} network protocols -- PROFINET IO and IEC-104, dominantly used in European automation and power grids, were reverse-engineered by the author and approaches for malicious command injection developed. The described attack vectors, explained by \gls{poc} code, were exploited to successfully compromise the industrial and electrical power grid process. The techniques of identifying such attack vectors and exploiting them rely primarily on the protocols lacking the security features. Even if security mechanisms exist, such as, IEC-104 security extensions they are seldom implemented by the vendors and even more rarely deployed by the system engineers in the production environment. The protocols, developed for air-gapped systems aimed at high availability and safety, lack the required security features, such as, integrity and authentication. This becomes even more critical when such initially serial-line proprietary communications are merged with the TCP/IP protocol stack, connected over industrial Ethernet, and commuted by the use of traditional IT equipment. The expected separation between the operational and information technology is becoming very vague and such systems can be targeted to deliver serious impact by the attacker originating from the Internet.
+
+\textbf{Tools.}
+The described four novel and critical attacks against \gls{ci} components researched and developed by the author allow to deliver a devastating impact on the affected and vulnerable systems, either by compromising the whole industrial process, controlling it, or inflicting potential physical damage to the \gls{ics} equipment. First attack, aimed at globally deployed and used PROFINET real-time protocol PROFINET IO, allows to inject rogue control frames on the network to control the industrial process.
+Second one (CVE-2018-10603; CVSSv3 10.0 [CRITICAL IMPACT]), targets a major industrial Ethernet protocol IEC-104 which is used worldwide in energy sector and permits to inject control commands allowing to tamper with the power grid and disable the power supply.
+Third (CVE-2018-10607; CVSSv3 8.2 [HIGH IMPACT]), aims at causing the \gls{dos} condition in the IEC-104 enabled systems through improper use of the protocol, which denies the supervision and control of the power grid.
+Fourth (CVE-2018-10605; CVSSv3 8.8 [HIGH IMPACT]), being targeted at a Martem TELEM-GW6e protocol gateway -- \gls{rtu}, a critical component of the \gls{ics} enabling communication and control of the deployed field devices, permits full remote takeover of the device and full compromise of the controlled industrial process.
+Additionally, XSS vulnerability was identified by the invited expert in the \gls{rtu} web-based management console (CVE-2018-10609; CVSSv3 7.4 [HIGH]).
+All of these attack vectors were responsibly disclosed to the vendor, US DHS ICS-CERT, and the international CSIRT community. After the US-CERT and vendor released security advisories, and only once the patches for the vulnerabilities were released, the \gls{poc} code\footnote{iec104inj. \url{https://github.com/lockout/iec104inj}. Accessed :01/10/2018} \footnote{profinet-poc. \url{https://github.com/lockout/iec104inj/tree/master/poc/porfinet-poc}. Accessed: 01/10/2018} \footnote{iec104dos-poc. \url{https://github.com/lockout/iec104inj/tree/master/poc/iec104dos-poc}. Accessed: 01/10/2018} \footnote{gw6e-poc. \url{https://github.com/lockout/iec104inj/tree/master/poc/gw6e-poc}. Accessed: 01/10/2018} was made publicly available on GitHub under the MIT license for attack vector testing, verification, and mitigation.
+
+Furthermore, the published work had the following impact on the global \gls{ics}/\gls{scada} security community:
+vulnerabilities were reported to the vendors and the US DHS ICS-CERT, which resulted in security advisories published \cite{ICS-CERT2018} \cite{MartemGWSmanual} and patches developed;
+vulnerability technical information and \gls{poc} attack scripts were disclosed to the international CERT community and \gls{ics} operators;
+four \gls{cve} numbers assigned \cite{CVE-2018-10603} \cite{CVE-2018-10605} \cite{CVE-2018-10607} \cite{CVE-2018-10609};
+attacks were implemented in the game network of the NATO CCD CoE executed \gls{cdx} ``Locked Shields 2018'' and cyber red team oriented technical exercise ``Crossed Swords 2018'', and successfully executed by the red team;
+and was addressed by multiple major vulnerability tracking databases\footnote{SecurityFocus. Multiple Martem Products Multiple Security Vulnerabilities. \url{https://www.securityfocus.com/bid/104286}. Accessed 23/09/2018} and news articles\footnote{SecurityWeek. Vulnerabilities Found in RTUs Used by European Energy Firms. \url{https://www.securityweek.com/vulnerabilities-found-rtus-used-european-energy-firms}. Accessed: 23/09/2018}.
+
+\textbf{Tactics and procedures.}
+Form the operational perspective these vulnerabilities give their user superiority and allow to inflict debilitating damage to the target system, thus making them powerful weapons in the \gls{crt} arsenal.
+It has to be noted, that reaching such critical systems in most cases will require a successful execution of previous attack stages, such as, initial foothold, command and control, lateral movement, and asset identification. There are cases when such systems are either directly exposed to the Internet or are available in one network hop distance from the initial foothold. More realistic, in case of military network critical components is that they either would not be connected to the Internet or would use dedicated and encrypted communication lines or channels. In such cases any other alternative options have to be explored by the cyber red team, such as, breach of supply chain integrity, physical access or removable media dissemination. However, to deliver an impact to a military system it is not necessary to target it directly. Such impact, either kinetic or cyber, can be achieved by targeting any other system or network on which it depends. Reaching the final objective would be assisted by successfully executing all previous attack stages, which are supported by the stealthy entry and control channel.
+
+As is the case with the initial attack vector identification and exploit development, also imposing a specific effect on the target system, might require time and in advance preparation.
+The actual time required for developing attacks against \gls{ics} components took the author no more than three days, however, the most time intensive parts were the reference network creation, implementation and configuration, and afterwards -- the developed attack verification under various circumstances and configuration settings. Such additional crucial activities are time intensive and demand significant amount of time depending on the complexity of the target system, required resources and skills. Reference system development and verification of attacks for the author took around one month working together with the vendor engineers.
+
+Developing custom attacks is not a straightforward approach and has multiple fundamental requirements, such as, expertise and experience, knowledge of right approaches and techniques, ability to use existing tools and develop new ones, and having an idea where to look for potential vulnerabilities. New ideas on finding and developing unknown vulnerabilities (i.e., ``zero-days'') will present the \gls{crt} with an significant advantage of inflicting a critical damage while circumventing the target defences.
+Depending on the allocated and available time-frame, such attack development might not always be plausible, but if intelligence information is provided and assessed early enough, such attacks can be developed in advance and used in the responsive computer network operations. Developed tools can be launched in a coordinated manner in support for other responsive activities and can inflict damage both directly and indirectly to cyber and kinetic components of the target system.
+Such bespoke approach allows to focus the attack on the most critical components of the target system to impose a significant damage and, if combined with the covert channel techniques, can be executed remotely to incur a significant operational advantage over the adversary.
+
+For a weakness to become a vulnerability it has to be exposed and an applicable method for its exploitation has to be identified. Such process can be time, skill and resource demanding can have a high failure ratio and varies from target to target with no predefined exploit development path available. Common Weakness Enumeration by MITRE corporation\footnote{Comprehensive CWE Dictionary. \url{https://cwe.mitre.org/data/definitions/2000.html}. Accessed: 28/10/2019} strives to deliver a list of known weaknesses, which can be targeted to potentially discover an exploitable vulnerability for the system under test.
+General types of weaknesses identified leading to their exploitation and industrial process control as described in \ref{pub:thirdPub}:
+missing authentication for a critical function (CWE-306) (e.g., no authentication or encryption) allows the extraction of the protocol payload and its reverse engineering;
+missing integrity verification (CWE-353) (e.g., no firmware update integrity checks performed) permits crafted malicious system update to be committed and executed on a remote system;
+incorrect default permissions (CWE-279) (e.g., limited user can overwrite system files) grants an opportunity to modify or replace critical system files thus compromising the whole system; and
+use of hard-coded and insufficiently protected credentials (CWE-798, CWE-522) (e.g., default credentials embedded in the software) permits easy extraction of default credentials and unsanctioned access to the remote system.
+
+In a very broad strokes, the vulnerability identification process can be split in the following general steps: target examination (e.g., protocol analysis, system examination, software debugging, sand-boxing); potential weakness identification (e.g., expert analysis, security auditing, fuzz-testing); weakness exploitation attempt and verification (e.g., attack prototyping, condition verification); and final exploit preparation. 
+To speed up this process, applicable techniques and tools need to be utilized, such as, use of suitable programming language to for tool development and exploit prototype.
+Apart from C/C++ programming languages, Python language is often used for attack prototyping and has been extensively used by the author (\ref{pub:firstPub}, \ref{pub:secondPub}, and \ref{pub:thirdPub}). The choice for Python in most cases is favoured due to reasonably easy learning curve, source code readability, and vast community support with third-party modules and frameworks oriented at exploit development and attack prototyping, to mention few, \textit{Scapy} packet manipulation tool, \textit{Radare2} reverse engineering framework, \textit{Capstone} disassembler, \textit{Unicorn} CPU emulator, \textit{Snap7} Siemens S7 communication suite, \textit{Metasploit} exploitation framework, and \textit{Veil-Evasion} common anti-virus solution bypass.
+
+The presented and verified concepts and approaches contribute to the following operational requirement development:
+stealthy and innovative,
+focus of force,
+targeted and pervasive,
+integrated and coordinated,
+effective, and
+asymmetric.

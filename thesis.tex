@@ -1,0 +1,722 @@
+\PassOptionsToPackage{estonian,english}{babel} % example: to add additional languages
+                                                      % last (english) is used by default
+                                                      % temporary language switch is done by
+                                                      % \begin{otherlanguage}{estonian}
+\documentclass{TTUPhD}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%               Compiling                %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% compile with:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% pdflatex thesis.tex
+% bibtex thesis
+% makeglossaries thesis
+% pdflatex thesis.tex
+% pdflatex thesis.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Note:
+% because bibtex is used in 3 places (list of publ.,
+% references section and publications appendix), then
+% LaTeX warns about multiply defined BibTeX labels.
+% This is normal.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% These can be used for revision process %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{soul} % highlight text with \hl{highlighted text} 
+%\usepackage{ulem} % strikethrough with \sout{stricken out text}
+
+%\usepackage{setspace} %%% enable the
+%\doublespacing        %%% double spacing 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%% Additional packages %%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[acronym,nonumberlist,nogroupskip,nopostdot,style=long]{glossaries}
+% \usepackage{glossary-longragged}
+\usepackage{multirow}
+\usepackage[hyphens]{url}
+\interfootnotelinepenalty=10000
+\parfillskip 0pt plus 0.5\textwidth
+\raggedbottom
+\makeglossaries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%% user-defined variables used in several places of this document %%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% main information
+\newcommand{\AuthorName}{Bernhards Blumbergs} % Author's name
+\newcommand{\ThesisTitleENG}{Specialized Cyber Red Team Responsive Computer Network Operations} % Title of thesis in English
+\newcommand{\ThesisTitleEST}{Vastutegevusele orienteeritud punase meeskonna küberoperatsioonid} % Title of thesis in Estonian
+\newcommand{\Year}{2019} % Year of defence
+\newcommand{\ThesisNumber}{22/2019} % Thesis number given by printing office
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% insert here the Bibtex names for the articles contained in the work.         %%%
+%%% If more than 3, then: a) expand this list;                                   %%%
+%%% and b) modify sections 'List of publications' and 'Appendix A: Publications' %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\FirstArticle}{Blumbergs2016} % work no. 1,     'ArticleNo1' is the BibTeX label,
+\newcommand{\SecondArticle}{Blumbergs2017} % article no. 2, it's what you'd use in \cite{ArticleNo1}
+\newcommand{\ThirdArticle}{Blumbergs2018} % article no. 3   (the entry labels in *.bib file)
+\newcommand{\FourthArticle}{Vaarandi2015} % article no. 4
+\newcommand{\FifthArticle}{Vaarandi2018} % article no. 5
+\newcommand{\SixthArticle}{Farar2017} % article no. 6
+\newcommand{\SeventhArticle}{Kont2017} % article no. 7
+\newcommand{\EighthArticle}{Schmitt2017} % article no. 8
+\newcommand{\NinthArticle}{Mucci2018} % article no. 9
+\newcommand{\TenthArticle}{Blumbergs2019} % article no. 10
+\newcommand{\unrelatedpublicationone}{Vaisanen2015}
+\newcommand{\unrelatedpublicationtwo}{Blumbergs2014}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% list of bibliography resource files
+\newcommand{\BibResources}{bib/my,bib/thesis} % list here the bibliography resources used in the work
+                                          % that means .bib files with absolute or relative paths,
+                                          % separated by a comma (no space). Here the file
+                                          % './references.bib' is used
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%             end of common variables (used in several places)                 %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\begin{centering}
+
+%First title page, English. Should require no manual modification
+{\large
+TALLINN UNIVERSITY OF TECHNOLOGY \\
+DOCTORAL THESIS \\
+\ThesisNumber \\
+}
+\vspace{5.5CM}
+{\huge
+\bf{
+\ThesisTitleENG \\
+}
+}
+\vspace{4.2cm}
+{\fontsize{16}{19.2} \selectfont \MakeUppercase{\AuthorName}} \\
+\vspace{6cm}%{7.9cm} %PRESS\\
+\includegraphics[height=12mm]{./img/TTU_kirjastus_ENG_mv_200x79.jpg}\\
+\end{centering}
+\thispagestyle{empty}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage 
+
+
+% inverse side of first title page: data (MODIFY!)
+\thispagestyle{empty} 
+{\noindent 
+TALLINN UNIVERSITY OF TECHNOLOGY \\
+School of Information Technologies\\
+Department of Software Science \\
+ }
+\noindent
+The dissertation was accepted for the defence of the degree of Doctor of Philosophy (cyber security) on 2nd of April, 2019\\
+\vspace{-3mm}
+
+\begin{tabbing}
+\textbf{Supervisor:} \quad \quad\= Dr. Rain Ottis,\\
+\>{\small Department of Software Science, School of Information Technologies,} \\
+\>{\small Tallinn University of Technology} \\
+\>{\small Tallinn, Estonia} \\
+\\
+\textbf{Co-supervisor:} 
+\> Dr. Risto Vaarandi \\
+\>{\small Department of Software Science, School of Information Technologies,} \\
+\>{\small Tallinn University of Technology} \\
+\>{\small Tallinn, Estonia} \\
+\\
+\textbf{Opponents:} 
+\> Professor Dr. Hiroki Takakura,\\
+\>{\small National Institute of Informatics,} \\
+\>{\small Tokyo, Japan} \\
+\\
+\> Fregattenkapit\"{a}n PD Dr. Dr. habil. Robert Koch, \\
+\>{\small Bundeswehr University of Munich,} \\
+\>{\small Munich, Germany} \\
+\end{tabbing}
+
+\noindent
+\textbf{Defence of the thesis:} 27th of May, \Year, Tallinn \\ % MODIFY!
+
+\noindent
+\textbf{Declaration:} \\
+\textit{Hereby I declare that this doctoral thesis, my original investigation and achievement, submitted for the doctoral degree at Tallinn University of Technology, has not been submitted for any academic degree elsewhere.}\\
+
+\begin{tabbing}
+\AuthorName \qquad \qquad \qquad \= $\rule{5cm}{0.15mm}$\\
+\> \hspace*{1.5cm} {\footnotesize signature} \\ %\hspace*{\fill} 
+\end{tabbing}
+%%%%%%%%%%%%%% LOGOS: EU/ESF, EST %%%%%%%%%%%%%%%%%%%
+\hspace{3mm}
+\includegraphics[width=35mm]{./img/eu_social_fund.jpg}\\
+\\
+\noindent
+Copyright: \AuthorName, \Year\\
+ISSN 2585-6898 (publication)\\
+ISBN 978-9949-83-413-6 (publication)\\
+ISSN 2585-6901 (PDF) \\
+ISBN 978-9949-83-414-3 (PDF)\\
+
+\clearpage
+\thispagestyle{empty}
+
+
+
+% second titlepage, secondary language, should require no manual modification
+\begin{centering}
+{\large
+TALLINNA TEHNIKA\"ULIKOOL \\
+DOKTORIT\"O\"O \\
+\ThesisNumber \\
+}
+\vspace{5.5CM}
+{\huge
+\bf{
+\ThesisTitleEST \\
+}
+}
+\vspace{4.2cm}
+{\fontsize{16}{19.2} \selectfont \MakeUppercase{\AuthorName}} \\
+\vspace{5cm}
+\includegraphics[height=12mm]{./img/TTU_kirjastus_EST_mv_200x79.jpg}\\
+\end{centering}
+
+\newpage
+
+
+% its inverse, empty
+\thispagestyle{empty}
+$ \quad $
+\newpage
+
+
+% if table of contents is too long, then use the 'spacing' commands: 
+%\begin{spacing}{0.1}
+\tableofcontents
+%\end{spacing}
+
+
+
+\section*{LIST OF PUBLICATIONS} % section: does not need to start on odd-numbered page
+\addcontentsline{toc}{section}{LIST OF PUBLICATIONS} % add this unnumbered section to the Table of Contents
+\bibliographystyle{abbrv}
+\nobibliography*
+The thesis is based on the following publications:
+\begin{publications}
+% NB! Labels (pub:firstPub, etc.) need to be uniform across the work
+% including in section 'Appendix A: Publications'
+% if more than 3 articles then expand: i) this list, ii) the 'newcommand' list at the top of this document
+% and iii) also the contents of 'Appendix A'
+\item \label{pub:firstPub}  \bibentry{\FirstArticle} 
+\item \label{pub:secondPub} \bibentry{\SecondArticle}
+\item \label{pub:thirdPub}  \bibentry{\ThirdArticle}
+\item \label{pub:fourthPub} \bibentry{\FourthArticle}
+\item \label{pub:fifthPub}  \bibentry{\FifthArticle}
+\item \label{pub:sixthPub}  \bibentry{\SixthArticle}
+\item \label{pub:seventhPub}  \bibentry{\SeventhArticle}
+\item \label{pub:eighthPub}  \bibentry{\EighthArticle}
+(This publication has not been included in the appendices of this thesis due to the publishing house copyright restrictions.)
+\item \label{pub:ninthPub}  \bibentry{\NinthArticle}
+\item \label{pub:tenthPub}  \bibentry{\TenthArticle}
+\end{publications}
+
+
+\section*{AUTHOR'S CONTRIBUTIONS TO THE PUBLICATIONS}  % section which does not need to start on odd-numbered page
+\addcontentsline{toc}{section}{AUTHOR'S CONTRIBUTIONS TO THE PUBLICATIONS}
+Contributions to the publications in this thesis are:
+\begin{contriblist}
+\item In \ref{pub:firstPub}, as the main and leading author of this publication, the author proposed a problem that IPv6 based transition mechanisms can be abused for undetectable covert channel establishment. The author developed, described and prototyped the IPv6 transition mechanism-based covert channels, created and published the \textit{nc64} and \textit{tun64} tools. The author designed the test network, implemented common covert channel mechanisms for comparison, and provided the guidelines and requirements to the evasion detection team. Additionally, the author successfully applied the developed \textit{nc64} and \textit{tun64} tools in practice within the NATO CCD CoE executed cyber defence exercise ``Locked Shields''.
+\item In \ref{pub:secondPub}, as the main and leading author of this publication, the author identified the problem of analysing and attacking the binary network protocols. The author developed, described and prototyped the bit-aware fuzzing framework \textit{Bbuzz} for binary network protocol reverse-engineering, which requires the minimum effort from the human expert to start the network protocol reverse-engineering or vulnerability identification. The author addressed the problem by introducing one bit as the smallest unit for fuzzing test-case creation, implemented automated network protocol sample analysis and test-case creation. Additionally, the author used the developed methodology and prototyped \textit{Bbuzz} tool to successfully reverse engineer the NATO Link-1 binary protocol to inject fake aeroplane tracks on the radar screen.
+\item In \ref{pub:thirdPub}, as the main and the only author for this publication, the author discovered vulnerabilities in major industrial Ethernet protocols (PROFINET IO, IEC-104) and devices (Martem GW6e-TELEM). The author performs and describes the reverse-engineering of the industrial control system network protocols, discloses technical details on identified vulnerabilities, addresses their mitigation by reporting to the vendor and the security community, and proposes the methods for critical information infrastructure protection. Additionally, the author implemented the found vulnerabilities and designed the attacks into the NATO CCD CoE technical exercises ``Locked Shields'' and ``Crossed Swords'' as a part of cyber red team attack campaign.
+\item In \ref{pub:fourthPub}, as the co-author of this publication, the author provided attack test cases, their execution approaches from the attacker perspective, and the validation of results.
+\item In \ref{pub:fifthPub}, as the co-author of this publication, the author provided the \textit{Bbuzz} tool developed by the author to conduct the experiments against the corporate production network systems, guided on the tool implementation, its use cases and performed the assessment of the results for the \textit{Bbuzz} test cases. Additionally, the application of the \textit{Bbuzz} tool allowed to uncover unexpected system log and error messages, allowing to further fine-tune the detection of anomalous messages.
+\item In \ref{pub:sixthPub}, as the co-author of this publication, the author developed a multi-segmented network for the experiment execution, guided the deception mechanism deployment according to the cyber kill-chain phases, and provided guidelines for the security expert engagement for the verification of the implemented cyber deception effectiveness.
+\item In \ref{pub:seventhPub}, as the co-author of this publication, the author proposed the problem of near real-time feedback necessity to increase the training benefit for the cyber red team participants. The author created, designed and led the development of the ``Crossed Swords'' exercise network, which was used for the real-time data acquisition of the executed attacks. Furthermore, provided the requirements for cyber red team situational awareness feedback and and expected result guidelines to the group of technical experts working on creating the \textit{Frankenstack}. Additionally, provided guidance for the tool assessment and applicability, and performed the validation and verification of the implemented solution for the real-time cyber red team feedback. Moreover, the \textit{Frankenstack} was successfully implemented and tested in the NATO CCD CoE technical exercise ``Crossed Swords''.
+\item In \ref{pub:eighthPub}, the author was the only technical expert and advisor to the international group of legal experts, who were working on describing the international law applicability to cyber operations. The author was engaged in discussions and drafting of the technical scenarios for various cyber operations for legal analysis, advised on the technical principles of cyberspace and operations, reviewed the manuscript at its drafting stages, and performed a thorough review and update of the technical scenarios presented in the first edition of the manual.
+\item In \ref{pub:ninthPub}, the author proposed an idea of automated solution with minimal dependencies to be used for system security baselining, vulnerability assessment, and incident response, locally on the system itself. Author contributed with the ideas and suggestions of applicable tool inclusion into the solution, produced result interpretation and representation. Additionally, author is one of the core developers of the ``Locked Shields'' game network, where the solution was tested to estimate the deployed virtual machine security level before and after their protection. Furthermore, the author led a cyber red teaming campaign against the game network and deployed systems during the exercise, before the security evaluation was conducted for these systems.
+\item in \ref{pub:tenthPub}, as the main and leading author of this publication, the author explains the cyber red team oriented full-spectrum technical exrcise ``Crossed Swords'' design and development, as well as the core principles of exercise execution and conduct of an offensive cyber-kinetic operation. The author is the creator and technical director for the exercise since 2014.
+\end{contriblist}
+
+
+%\section*{Abbreviations}  % section which does not need to start on odd-numbered page
+\input{sections/glossary}
+\printglossary[type=\acronymtype]
+% \printglossaries
+\addcontentsline{toc}{section}{LIST OF ACRONYMS}
+
+\clearpage
+\listoffigures
+\addcontentsline{toc}{section}{LIST OF FIGURES} 
+
+\clearpage
+\listoftables
+\addcontentsline{toc}{section}{LIST OF TABLES} 
+
+% The coolest page:
+\oddpagesection*{}
+\vspace{6cm}
+\begin{quotation}
+``You take the red pill -- you stay in Wonderland, and I show you how deep the rabbit hole goes. Remember: all I'm offering is the truth.'' \\ \\
+\rule{7cm}{0pt} -- Morpheus, \textit{The Matrix} \\ \\ \\ \\
+
+To my white rabbit, whom I follow.
+\end{quotation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% MAIN THESIS START %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{sections/introduction}
+
+\input{sections/background}
+
+\input{sections/core}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  MAIN THESIS END  %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FloatBarrier % forces all remaining floats and images in buffer to be dumped to document
+
+% references
+\clearpage % makes the references start on odd page
+\addcontentsline{toc}{section}{REFERENCES} % adds References to table of contents
+\bibliography{\BibResources} % references.bib file, needs full relative or absolute path
+
+% acknowledgements must start on odd page (right side page)
+\section*{ACKNOWLEDGEMENTS}
+\addcontentsline{toc}{section}{ACKNOWLEDGEMENTS} 
+%Here you can thank your supervisor, colleagues, family members, etc. for help and support. Be sure to mention any financial support.
+I, the author, would like to express my deepest gratitude to my family and the beloved ones for the invaluable support throughout the studies. To my supervisors, Rain and Risto, for encouraging and enduring the endeavour into the darker side of the cyberspace. To my unofficial supervisor, Olaf, for providing the valuable guidance and sharing his opinions. To Raimo and Baiba for supporting the research and granting academic freedom. To Michael and Liis for offering me the journey into an unknown world of legal aspects of the cyber warfare and operations. And to all my colleagues and co-researchers we have cooperated to conduct sophisticated projects and advanced research.
+
+\section*{ABSTRACT \\ \ThesisTitleENG}
+\addcontentsline{toc}{section}{ABSTRACT}
+%Abstract is similar to the abstract of a research paper but more thorough (advisable length is 1--2 pages).
+%It briefly revisits the content of the thesis, including the motivation for this work, novelty with respect to the previous work, problem definition, methodology, results and conclusions.
+This thesis, based on the collection of published and cited publications, explores the aspects of cyber red team responsive computer network operations, addresses the aspects of an asymmetric response to a stronger adversary, assesses threat detection and cyber deception method applicability, and examines the training requirements for the cyber red team.
+
+In the age of state-affiliated and non-affiliated actors pursuing their agendas within and through the cyberspace, anyone can fall as a potential victim or unwitting accomplice to conducted cyber operations, such as, cyber espionage, cyber sabotage, spread of malware, creation of botnets, conduct of cyber attacks, on-line fraud, identity stealing, information warfare, and information system infiltration. Sophisticated and resourceful threat actors, deciding to maintain persistence in their victim's computer networks, can potentially inflict significant damage, such as, sensitive information exfiltration, data modification, sabotage the integrity of the targeted processes, and presumably inflict kinetic impact. For a targeted victim nation or nation-affiliated entity to respond to such a threat, the proper threat detection and situational awareness techniques need to be deployed in the first place. To support the response against an ongoing or expected cyber attack, the proper capabilities and methods need to be established and created. Cyber red team, equipped with specialized techniques, tools, tactics and procedures, and tasked with engaging the adversary as part of the responsive cyber defence, can provide an unconventional and asymmetric response to the threat. This thesis proposes novel techniques, which are applicable to cyber red team to develop new tools, apply tactics and procedures to conduct the responsive computer network operations. Proposed techniques, prototyped in tools, are tested and compared against other common and popular solutions in that area. The results in the listed publications and as presented in this thesis, show the strengths and advantages of the proposed techniques.
+
+For the response to be possible, some level of initial attribution is required to identify the source of attack, the attack paths taken, and start tracing back to it's origin. To enable this, proper solutions and adequate approaches are needed in order to have situational awareness and possibilities for adversary identification. Within the first stages of the response, before engaging the specialized cyber red team, a combination of passive and active defence solutions have to be employed, such as, network intrusion detection and prevention system, log analysis and anomaly detection, honeypots, honey-nets, cyber decoys, and honey-tokens. Specialized cyber red team, engaged in responsive computer network operations, requires equal capabilities and visibility to continue tracking the adversary, while pursuing it through the cyberspace, beyond the protected systems. Such techniques and solutions become part of the cyber red team's OODA (Observe, Orient, Decide and Act) loop to aid in detecting and observing the adversary. This becomes more important, if the adversary decides to engage in counter-cyber red team operation, thus potentially endangering the execution of an ongoing responsive computer network operation. System log-based anomaly detection and cyber deception have established themselves as prominent technologies, advancing beyond regular detection and defence. This thesis assesses and confirms the applicability of such technique integration into the cyber red team work-flow to assist with at least situational awareness, threat detection, adversary assessment, technical attribution, and cyber red team's operational infrastructure and asset protection.
+
+The cyber red team selection, training, and skill-set advancement is a necessary part of such capability establishment and development. This becomes essential, when considering the training designed to prepare the team for real-life engagements and cyber operations. Technical exercises, developed to meet the real-life operations as close as possible, provide one of the options for such training and skill development. This thesis explores a cyber red team oriented technical exercise as a use case to establish the exercise design goals, training and mission objectives, the level of technical challenge sophistication, red team management and chain-of-command challenges, applicability of novel techniques, tools, tactics and procedures, cyber-kinetic interaction, legal implications, and situational awareness feedback. The author's created and managed technical exercise combines all of the explored aspects within this thesis, conducted research, and listed publications. One of the main corner-stones of the described exercise is the near real-time situational awareness and attack detection feedback to the training audience. This feedback is intended to provide immediate visibility on how the conducted attacks appear, are being detected by various solutions, and allow the cyber red team to improve their approaches by mitigating the identified drawbacks and mistakes. With this unique visibility, the red team members are able to verify their tools, apply new ones, experiment with various tactics and procedures, to observe the detection of their actions, and identify in what ways the level of stealth can be improved. Thesis verifies the benefits of the presented exercise, its technical concepts, employed techniques, tools, tactics and procedures, mutual interdependencies with kinetic game-play, and the near real-time feedback to the cyber red team.
+
+The author acknowledges the variety of different penetration testing and attack tools already available publicly on source code sharing services, such as, GitHub and SourceForge. Despite some of those projects being applicable to cyber red teaming, even less of them can be used for the responsive computer operations. This thesis acknowledges and assesses some of the most prominent tools, which can be used to further benefit the cyber red team campaign. However, the emphasis of this thesis is put towards the novel techniques and ideas, which can be applied by the cyber red team to develop specialized tools tailored for computer network operations. It has to be noted, that presented techniques and approaches are applicable not only to cyber red team executed responsive computer operations, but can be applicable to other red teaming activities, penetration testing, and more cyber operations, such as, computer network attack and exploitation.
+Additionally, the author recognizes the significant work already done by various cyber security companies, threat detection and assessment enterprises, and governmental organizations and initiatives, for identifying and assessing global threat actors and their techniques, tools, tactics and procedures. The knowledge and information made public by these entities and initiatives is used within this thesis to be built on top of it and use it as a catalyst for further advancements.
+Furthermore, the author is fully aware of the ethical considerations this work may tackle, such as, the proposed technique usage to do harm, inflict damage, and conduct malicious cyber attacks. It has to be accepted, that any development, especially in cyber security, may have dual-use implications to benefit both the attacker and the defender. This, for sure, is part of the endless quest between defence and attack, however, the author hopes that the presented work will allow the defenders to increase the protection of the information systems by introducing the concept of counter-attack as part of the responsive cyber defence.
+
+
+\begin{otherlanguage}{estonian}
+\section*{KOKKUV\~{O}TE\\ \ThesisTitleEST }
+\addcontentsline{toc}{section}{KOKKUV\~{O}TE} 
+Käesolev doktoritöö põhineb autori publikatsioonidel ja uurib punase meeskonna küberoperatsioone vastusena vastase operatsioonidele, tugevamale vastasele asümmeetrilise vastupanu osutamist, ohu avastamise ja petteoperatsioonide kasutusvõimaluste hindamist küberruumis ning nõudeid punase meeskonna väljaõppele.
+
+Kuna erinevad riiklikud ja mitte-riiklikud aktorid kasutavad oma eesmärkide saavutamiseks küberruumi, võib igaüks langeda mingi küberoperatsiooni ohvriks või tahtmatuks kaasosaliseks, sh puutuda kokku küberspionaaži, kübersabotaaži, pahavara, botivõrkude, küberrünnete, netipettuste, identiteedivarguse, infosõja ja infosüsteemidesse tungimisega. Kõrgeltarenenud ja leidlikud aktorid võivad põhjustada oma ohvrite võrkudes olulist kahju, sh tundliku info vargused, andmete muutmine, protsesside terviklikkuse saboteerimine, millega võib kaasneda füüsiline kahju. Selleks, et sihikule võetud riigil või organisatsioonil oleks võimalus sellistele ohtudele vastu seista, on esmajärjekorras vaja sobivat ohtude avastamise ja situatsiooniteadlikkuse süsteemi. Samuti on vaja käimasolevale või oodatavale küberründele vastamiseks sobivaid võimekusi ja meetodeid. Küberruumis opereeriv punane meeskond, mis on varustatud vastavate tehnikate, tööriistade, taktikate ja protseduuridega ning millele on antud ülesandeks küberohule reageerimine, võib anda vastasele ebakonventsionaalse ja asümmeetrilise vastuse. Käesolev doktoritöö kirjeldab uudseid tehnikaid punase meeskonna küberoperatsioonideks vajalike tööriistade, taktikate ja protseduuride arendamiseks. Välja pakutud tehnikad on rakendatud prototüüptööriistades ning testitud ja võrreldud olemasolevate populaarsete lahendustega. Doktoritöö aluseks olevates artiklites detailselt kirjeldatud tulemused näitavad välja pakutud tehnikate tugevusi ja eeliseid olemasolevate ees.
+
+Selleks, et vastase ründele küberoperatsioonidega vastata, tuleb esmalt rünnet analüüsida, et identifitseerida ründe allikas ja ründega seotud süsteemid. Situatsiooniteadlikkuse omamiseks ja vastase identifitseerimise võimaldamiseks on tarvis sobivaid lahendusi ja lähenemisviise. Enne punase meeskonna kaasamist vastuoperatsioonidesse tuleb rakendada erinevaid passiivseid ja aktiivseid kaitsemeetmeid, nt. sissetungituvastus- ja –tõrjesüsteemid (IDS ja IPS), logianalüüs ja anomaaliatuvastus, meepotid ja –võrgud, peibutised, jne. Vastuoperatsioonidele spetsialiseerunud punane meeskond vajab juurdepääsu ja võimekust vastase jälitamiseks nii oma kui võõrastes süsteemides. Sellised tehnikad ja lahendused on osaks punase meeskonna OODA (Observe, Orient, Decide, Act – märka, orienteeru, otsusta, tegutse) tsüklist, mis aitab vastast avastada ja jälgida. See muutub olulisemaks, kui vastane otsustab omakorda mõjutada punase meeskonna küberoperatsioone ja seab seeläbi ohtu meeskonnale seatud eesmärgi täitmise. Süsteemilogidel põhinev anomaaliatuvastus ja küberpeibutiste kasutamine on osutunud olulisteks tehnoloogiateks, mis laiendavad traditsioonilisi kaitsemeetmeid. Käesolev doktoritöö hindab antud tehnikate integreerimise võimalusi punase meeskonna töövoogudesse, et parandada situatsiooniteadlikkust, ohtude avastamist, vastase (võimekuse) määratlemist, ründe allika kindlakstegemist ning punase meeskonna operatiivtaristu ja varade kaitsmist.
+
+Punase meeskonna liikmete valik, väljaõpe ja oskuste arendamine on selle võime arendamisel tähtis osa, eriti arvestades nende ettevalmistamist päris operatsioonide läbiviimiseks. Realistlikult disainitud tehnilised õppused on üks viis sellise väljaõppe pakkumiseks. See doktoritöö sisaldab juhtumiuuringut ühe punase meeskonna jaoks loodud tehnilise õppuse kohta, sh õppuse eesmärkide, disaini, õppetulemite, tehnilise keerukuse, punase meeskonna juhtimise, uudsete tehnikate kasutuselevõtu, sobivate tööriistade, taktikate ja protseduuride valiku, küber-kineetilise koostoime, juriidiliste aspektide ja situatsiooniteadlikkuse tagasisidega seonduvate teemade kohta. Neid autori loodud ja juhitud õppuse aspekte ongi käesolevas töös ning selle aluseks olevates publikatsioonides süvitsi uuritud.
+
+Üks antud õppuse nurgakivisid on reaalajalähedane situatsiooniteadlikkuse ja ründetuvastuse tagasiside õppuse sihtgrupile. Tagasiside kaudu saavad õppusel osalejad teada, kuidas nende poolt läbi viidud operatsioon näeb välja vastase ja kõrvaliste osapoolte jaoks, mis omakorda annab neile võimaluse lihvida oma tehnikaid ja protseduure, eksperimenteerida tööriistadega ning vajadusel viia sisse muudatusi oma töövoos. Doktoritöö kinnitab antud õppuse kasulikkust, selle aluseks olevaid tehnilisi kontseptsioone, tehnikaid, tööriistu ja protseduure, kineetilise osa koostoimega kaasnevaid mõjusid küberoperatsioonidele, ning reaalajalähedase tagasiside olulisust punase meeskonna väljaõppes.
+
+Selle töö autor on teadlik paljudest erinevatest läbistustestimise vahenditest ja ründetööriistadest, mis on avalikkusele kättesaadavad koodijagamisteenuste nagu GitHub ja SourceForge kaudu. Teisalt on vaid mõned neist kasutatavad punase meeskonna operatsioonides, ning neist omakorda vaid osa on kasutatavad vastuoperatsioonide kontekstis. Doktoritöö raames vaadeldakse ja hinnatakse olulisemate tööriistade kasutusvõimalusi antud operatsioonidel, kuid töö keskmes on uudsed tehnikad ja ideed, mida saab rakendada punase meeskonna jaoks spetsiaalsete tööriistade loomisel. Antud tehnikad on rakendatavad mitte ainult vastuoperatsioonide, vaid ka nt. läbistustestide, võrgurünnete ja võrguluure kontekstis. Lisaks, autor tunnustab küberturbeettevõtete ja valitsusasutuste tehtud tööd globaalsete ohtude identifitseerimisel ja nende tehnikate, tööriistade, taktikate ja protseduuride hindamisel. Nende avaldatud informatsioon on olnud oluline katalüsaator antud töö raames välja pakutud uudsete lahenduste arendamisel. Lisaks, autor on täiesti teadlik antud tööga kaasnevatest eetilistest küsimustest, kuna valedes kätes võivad loodud lahendused ja teadmised olla ohuks. Kahjuks ei saa küberturbe alases uurimistöös mööda faktist, et paljud leiud on ühtemoodi kasulikud nii kaitsja kui ründaja seisukohast. Autori lootus on, et antud töö annab selles igaveses võidurelvastuses kaitsepoolele eelise, võimaldades juurutada vastuoperatsioonide kontseptsiooni küberkaitses.
+\end{otherlanguage}
+
+
+%\thispagestyle{empty}
+%$ \quad $
+%\clearpage
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%            Appendix containing the PhD thesis articles                       %%%
+%%% If more than 3 articles: a) expand the list at the preamble of this document,%%%
+%%%                          b) expand the List of publications,                 %%%
+%%%                          c) expand the List of author's contributions        %%%
+%%%                          d) add more entries here                            %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% titles of all appendixes must start on the odd page (right side page)
+% publication 1 
+\oddpagesection*{Appendix 1}
+\addcontentsline{toc}{section}{Appendix 1 -- \ref{pub:firstPub}}
+\vspace{6cm}
+{\large
+\textbf{\ref{pub:firstPub}} \\
+}
+
+\noindent
+{\large
+\bibentry{\FirstArticle}
+}
+\newpage
+\thispagestyle{empty}
+$ \quad $
+\includepdf[pages=-]{./art/art1.pdf} 
+
+
+% publication 2
+\oddpagesection*{Appendix 2}
+\addcontentsline{toc}{section}{Appendix 2 -- \ref{pub:secondPub}}
+\vspace{6cm}
+{\large
+\textbf{\ref{pub:secondPub}} \\
+}
+
+\noindent
+{\large
+\bibentry{\SecondArticle}
+}
+\newpage
+\thispagestyle{empty}
+$ \quad $
+\includepdf[pages=-]{./art/art2.pdf}
+
+% publication 3
+\oddpagesection*{Appendix 3}
+\addcontentsline{toc}{section}{Appendix 3 -- \ref{pub:thirdPub}}
+\vspace{6cm}
+{\large
+\textbf{\ref{pub:thirdPub}} \\
+}
+
+\noindent
+{\large
+\bibentry{\ThirdArticle}
+}
+\newpage
+\thispagestyle{empty}
+$ \quad $
+\includepdf[pages=-]{./art/art3.pdf}
+
+% publication 4
+\oddpagesection*{Appendix 4}
+\addcontentsline{toc}{section}{Appendix 4 -- \ref{pub:fourthPub}}
+\vspace{6cm}
+{\large
+\textbf{\ref{pub:fourthPub}} \\
+}
+\noindent
+{\large
+\bibentry{\FourthArticle}
+}
+\newpage
+\thispagestyle{empty}
+$ \quad $
+\includepdf[pages=-]{./art/art4.pdf}
+
+% publication 5
+\oddpagesection*{Appendix 5}
+\addcontentsline{toc}{section}{Appendix 5 -- \ref{pub:fifthPub}}
+\vspace{6cm}
+{\large
+\textbf{\ref{pub:fifthPub}} \\
+}
+\noindent
+{\large
+\bibentry{\FifthArticle}
+}
+\newpage
+\thispagestyle{empty}
+$ \quad $
+\includepdf[pages=-]{./art/art5.pdf}
+
+% publication 6
+\oddpagesection*{Appendix 6}
+\addcontentsline{toc}{section}{Appendix 6 -- \ref{pub:sixthPub}}
+\vspace{6cm}
+{\large
+\textbf{\ref{pub:sixthPub}} \\
+}
+\noindent
+{\large
+\bibentry{\SixthArticle}
+}
+\newpage
+\thispagestyle{empty}
+$ \quad $
+\includepdf[pages=-]{./art/art6.pdf}
+
+
+% publication 7
+\oddpagesection*{Appendix 7}
+\addcontentsline{toc}{section}{Appendix 7 -- \ref{pub:seventhPub}}
+\vspace{6cm}
+{\large
+\textbf{\ref{pub:seventhPub}} \\
+}
+\noindent
+{\large
+\bibentry{\SeventhArticle}
+}
+\newpage
+\thispagestyle{empty}
+$ \quad $
+\includepdf[pages=-]{./art/art7.pdf}
+
+% publication 8
+\oddpagesection*{Appendix 8}
+\addcontentsline{toc}{section}{Appendix 8 -- \ref{pub:ninthPub}}
+\vspace{6cm}
+{\large
+\textbf{\ref{pub:ninthPub}} \\
+}
+\noindent
+{\large
+\bibentry{\NinthArticle}
+}
+\newpage
+\thispagestyle{empty}
+$ \quad $
+\includepdf[pages=-]{./art/art9.pdf}
+
+% publication 10
+\oddpagesection*{Appendix 9}
+\addcontentsline{toc}{section}{Appendix 9 -- \ref{pub:tenthPub}}
+\vspace{6cm}
+{\large
+\textbf{\ref{pub:tenthPub}} \\
+}
+\noindent
+{\large
+\bibentry{\TenthArticle}
+}
+\newpage
+\thispagestyle{empty}
+$ \quad $
+\includepdf[pages=-]{./art/art10.pdf}
+
+% Exercise survey
+\oddpagesection*{Appendix 10}
+\label{app:survey}
+\addcontentsline{toc}{section}{Appendix 10 -- ``Crossed Swords'' Exercise Feedback Survey Results}
+\vspace{6cm}
+{\large
+\textbf{``Crossed Swords'' Exercise Feedback Survey Results} \\
+}
+\noindent
+\newpage
+\thispagestyle{empty}
+$ \quad $
+\includepdf[pages=-]{./art/survey.pdf}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%        End of Appendix containing the PhD thesis articles                    %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% --------------------------------------------------------------
+\FloatBarrier
+\section*{CURRICULUM VITAE}
+\addcontentsline{toc}{section}{Curriculum Vitae}
+
+\setlength{\parindent}{0cm} % from this point onwards, no indent
+% --------------------------------------------------------------
+
+\textbf{1. Personal data}
+
+\begin{tabbing}
+Name 	\quad\quad\quad\quad\quad\quad\quad\quad\quad 	\=Bernhards Blumbergs \\
+Date and place of birth \> 17 February 1982, Riga, Latvia\\
+Nationality \> Latvian
+\end{tabbing}
+
+\textbf{2. Contact information}
+\begin{tabbing}
+Address	\quad\quad 	\= Tallinn University of Technology, School of Information Technologies, \\
+                        \> Department of Software Science, \\
+                        \> Ehitajate tee 5, 19086 Tallinn, Estonia \\
+                        E-mail\> research[at]b2.lv
+\end{tabbing}
+
+\textbf{3. Education}
+\begin{tabbing}
+2013--2019 \quad\quad \=Tallinn University of Technology, School of Information Technologies,\\ 
+             \>Cyber Security, PhD studies \\
+2003--2005	 	\>Riga Technical University, Faculty of Electronics and Telecommunications,\\ \>Telecommunications, MSc \\
+2000--2003	 	\>Riga Technical University, Faculty of Electronics and Telecommunications,\\ \>Electrical Engineering, BSc \\
+\end{tabbing}
+
+\textbf{4. Language competence}
+\begin{tabbing}
+Latvian\quad\quad \= native\\
+English	  \> C2\\
+Russian   \> B2\\
+German    \> B1\\
+Estonian  \> A2\\
+Japanese  \> A1\\
+\end{tabbing}
+
+\textbf{5. Professional employment}
+\begin{tabbing}
+2013--2017 \quad\quad \= NATO CCD CoE, Researcher \\
+2012--\ldots \> CERT.LV, Cyber security expert\\
+2003--2012   \> Latvian National Armed Forces, Information systems engineer\\
+\end{tabbing}
+
+\textbf{6. Training courses}
+\begin{tabbing}
+2018 \quad\quad \= Industrial Control System Penetration Testing \\
+2016 \> Windows Kernel Exploitation \\
+2016 \> SANS ICS410: ICS/SCADA Security Essentials \\
+2015 \> SANS SEC770: Advanced Exploit Development for Penetration Testers \\
+2014 \> SANS SEC573: Python for Penetration Testers \\
+2013 \> SANS SEC660: Advanced Penetration Testing, Exploit Writing, and Ethical Hacking \\
+2006 \> Microsoft Certified System Administrator\\
+2006 \> Microsoft Certified Professional\\
+\end{tabbing}
+
+\newpage
+\textbf{7. Computer skills}
+\begin{itemize}
+\item Operating systems: GNU/Linux, MS Windows
+\item Document preparation: Vim, LaTeX, Libre Office, MS Office
+\item Programming languages: Python, Bash, C/C++, Intel x86 Assembler
+\item Scientific packages: MATLAB
+\end{itemize}
+
+\textbf{8. Honours and awards}
+\begin{itemize}
+\item 2018, Ambassador for NATO CCD CoE
+\item 2000--\ldots, Military awards
+\end{itemize}   
+
+\textbf{9. Defended theses} 
+\begin{itemize}
+\item 2019, "Specialized Cyber Red Team Responsive Computer Network Operations", PhD, supervisors Prof. Dr. R. Ottis and Dr. R. Vaarandi, Tallinn University of Technology, Department of Software Science, School of Information Technologies
+\item 2005, "Mobile IP and IPv6 Implementation for Network Roaming", MSc, supervisor Prof. Dr. A. Kavacis, Riga Technical University, Institute of Telecommunications
+\item 2003, "Use of Neural Networks for Secure Data Transmission Over Untrusted Networks", BSc, supervisor Prof. Dr. T. Celmins, Riga Technical University, Institute of Electronics
+\end{itemize}
+
+\textbf{10. Field of research} 
+\begin{itemize}
+\item Cyber Red Teaming
+\item Network Infrastructure and Network Protocol Attacks
+\item ICS/SCADA Attacks
+\item Exploit Development
+\end{itemize}
+
+\textbf{11. Scientific work}
+\textbf{Papers}
+\begin{enumerate}
+\item \bibentry{\FirstArticle}
+\item \bibentry{\SecondArticle}
+\item \bibentry{\ThirdArticle}
+\item \bibentry{\FourthArticle}
+\item \bibentry{\FifthArticle}
+\item \bibentry{\SixthArticle}
+\item \bibentry{\SeventhArticle}
+\item \bibentry{\EighthArticle}
+\item \bibentry{\NinthArticle}
+\item \bibentry{\TenthArticle}
+\item \bibentry{\unrelatedpublicationone}
+\item \bibentry{\unrelatedpublicationtwo}
+\end{enumerate}
+
+\textbf{Conference presentations}
+\begin{enumerate}
+\item \bibentry{\FirstArticle}
+\item \bibentry{\SecondArticle}
+\item \bibentry{\ThirdArticle}
+\item \bibentry{\SeventhArticle}
+\item \bibentry{\TenthArticle}
+\end{enumerate}
+
+
+
+
+
+
+\newpage
+\section*{ELULOOKIRJELDUS}
+\addcontentsline{toc}{section}{Elulookirjeldus}
+\textbf{1. Isikuandmed}
+
+\begin{tabbing}
+Nimi 	\quad\quad\quad\quad\quad\quad\quad\quad\quad 	\=Bernhards Blumbergs\\
+S\"unniaeg ja -koht \> 17. Veebruar 1982, Riia, L\"{a}ti\\
+Kodakondsus \> L\"{a}ti
+\end{tabbing}
+
+\textbf{2. Kontaktandmed}
+\begin{tabbing}
+Aadress	\quad\quad 	\= Tallinna  Tehnika\"ulikool, Tarkvarateaduse Instituut, \\
+                        \> Ehitajate tee 5, 19086 Tallinn, Estonia \\
+                        E-post\> research[a]b2.lv
+\end{tabbing}
+
+\textbf{3. Haridus}
+\begin{tabbing}
+2013--2019 \quad\quad \=Tallinna Tehnikaülikool, infotehnoloogia teaduskond,\\
+                \>doktoriõpe\\ 
+2003--2005	 	\>Riia Tehnikaülikool, elektroonika ja telekommunikatsiooni teaduskond,\\
+                \>magistriõpe\\
+2000--2003	 	\>Riia Tehnikaülikool, elektroonika ja telekommunikatsiooni teaduskond,\\
+                \>bakalaureuseõpe\\
+\end{tabbing}
+
+\textbf{4. Keelteoskus}
+\begin{tabbing}
+L\"{a}ti keel\quad\quad \= emakeel\\
+Inglise keel \> C2\\
+Vene keel    \> B2\\
+Saksa keel   \> B1\\
+Eesti keel   \> A2\\
+Jaapani keel \> A1\\
+\end{tabbing}
+
+\textbf{5. Teenistusk\"aik}
+\begin{tabbing}
+2013--2017 \quad\quad \= NATO CCD CoE, teadur\\
+2012--\ldots \> CERT.LV, küberturbe ekspert\\
+2003--2012   \> Läti Rahvuslikud Relvajõud, infosüsteemide insener\\
+\end{tabbing}
+
+\textbf{6. Koolituskursused}
+\begin{tabbing}
+2018 \quad\quad \= Industrial Control System Penetration Testing \\
+2016 \> Windows Kernel Exploitation \\
+2016 \> SANS ICS410: ICS/SCADA Security Essentials \\
+2015 \> SANS SEC770: Advanced Exploit Development for Penetration Testers \\
+2014 \> SANS SEC573: Python for Penetration Testers \\
+2013 \> SANS SEC660: Advanced Penetration Testing, Exploit Writing, and Ethical Hacking \\
+2006 \> Microsoft Certified System Administrator\\
+2006 \> Microsoft Certified Professional\\
+\end{tabbing}
+\newpage
+
+\textbf{7. Arvutioskused}
+\begin{itemize}
+\item Operatsioonis\"{u}steemid: GNU/Linux, MS Windows
+\item Kontoritarkvara: Vim, LaTeX, Libre Office, MS Office
+\item Programmeerimiskeeled: Python, Bash, C/C++, Intel x86 Assembler
+\item Teadustarkvara paketid: MATLAB
+\end{itemize}
+
+\textbf{8. Autasud}
+\begin{itemize}
+\item 2018, NATO CCD CoE saadik
+\item 2000--\ldots, Sõjaväelised autasud
+\end{itemize}
+
+\textbf{9. Kaitstud l\~oput\"o\"od} 
+\begin{itemize}
+\item 2019, "Specialized Cyber Red Team Responsive Computer Network Operations", PhD, supervisors Prof. Dr. R. Ottis and Dr. R. Vaarandi, Tallinn University of Technology, Department of Software Science, School of Information Technologies
+\item 2005, "Mobile IP and IPv6 Implementation for Network Roaming", MSc, supervisor Prof. Dr. A. Kavacis, Riga Technical University, Institute of Telecommunications
+\item 2003, "Use of Neural Networks for Secure Data Transmission Over Untrusted Networks", BSc, supervisor Prof. Dr. T. Celmins, Riga Technical University, Institute of Electronics
+\end{itemize}
+
+\textbf{10. Teadust\"o\"o p\~ohisuunad} 
+\begin{itemize}
+\item Punased meeskonnad küberturbes
+\item Infrastruktuuri ja võrguprotokollide vastased ründed
+\item ICS/SCADA vastased ründed
+\item Ründetarkvara arendus
+\end{itemize}
+
+\textbf{11. Teadustegevus}\\
+Teadusartiklite, konverentsiteeside ja konverentsiettekannete loetelu on toodud ingliskeelse elulookirjelduse juures. 
+\end{document}
